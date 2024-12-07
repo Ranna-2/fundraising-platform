@@ -4,9 +4,6 @@
     font-weight: 500;
 }
 
-.navbar {
-    background-color: white; /* Change navbar background to white */
-}
 
 .navbar .nav-link:hover {
     color: #28a745;
