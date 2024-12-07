@@ -44,6 +44,14 @@ heroOverlay: {
       fontSize: '1.5rem',
       marginBottom: '2rem',
     },
+
+    // HomePageStyles.js (add this to your existing styles)
+searchBar: {
+  marginTop: '2rem',
+  padding: '1rem',
+  backgroundColor: '#f9f9f9',
+  borderRadius: '8px',
+},
   
     // Updated button styles to replace glassmorphism and apply the new button styles
     ctaButton: {

@@ -1,7 +1,11 @@
 /* Navbar Styles */
 .navbar .nav-link {
-    color: #fff;
+    color: #000000;
     font-weight: 500;
+}
+
+.navbar {
+    background-color: white; /* Change navbar background to white */
 }
 
 .navbar .nav-link:hover {

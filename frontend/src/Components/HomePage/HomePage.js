@@ -1,7 +1,7 @@
 import React from 'react';
 import styles from './HomePageStyles';
 import NavBar from './NavBar';
-
+import SearchBar from './SearchBar';
 
 const HomePage = () => {
     return (
@@ -19,6 +19,7 @@ const HomePage = () => {
                     <button style={styles.ctaButton}>Start a Campaign</button>
                     <button style={styles.ctaButton}>Learn More</button>
                 </div>
+                <SearchBar />
             </div>
             </div>
 
