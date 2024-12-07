@@ -1,11 +1,12 @@
 import React from 'react';
 import './NavBarStyles.css';  // Import the CSS file
+import { Link } from 'react-router-dom';
 
 const NavBar = () => {
   return (
     <nav className="navbar navbar-expand-lg navbar-light bg-light">
       <div className="container">
-        <a className="navbar-brand" href="#">
+        <a className="navbar-brand" href="/">
           <img 
             src="/images/logo.png" 
             alt="KindledHope.lk" 
@@ -29,10 +30,10 @@ const NavBar = () => {
         <div className="collapse navbar-collapse" id="navbarNav">
           <ul className="navbar-nav ms-auto align-items-center">
             <li className="nav-item">
-              <a className="nav-link" href="#">Home</a>
+            <Link className="nav-link" to="/">Home</Link> {/* Link to HomePage */}
             </li>
             <li className="nav-item">
-              <a className="nav-link" href="#">Campaigns</a>
+              <a className="nav-link" href="/Campaign/index.html">Campaigns</a>
             </li>
             <li className="nav-item dropdown">
               <a

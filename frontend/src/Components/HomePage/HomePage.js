@@ -7,7 +7,7 @@ const HomePage = () => {
     return (
         <div style={styles.container}>
              {/* Navigation Bar */}
-             <NavBar /> {/* This ensures your NavBar is visible */}
+             <NavBar /> {/* This makes sure that the NavBar is visible */}
             {/* Hero Section */}
             <div style={styles.hero}>
                 <div style={styles.heroOverlay}></div>
