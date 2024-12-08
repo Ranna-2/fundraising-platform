@@ -70,10 +70,11 @@ const NavBar = () => {
               </ul>
             </li>
             <li className="nav-item">
-              <a className="nav-link btn btn-custom-primary text-white" href="#">Donate</a>
+            <a className="nav-link btn btn-custom-primary text-white" href="/Login/login.html">Donate</a>
+              
             </li>
             <li className="nav-item">
-              <a className="nav-link btn btn-outline-custom-primary" href="#">Fundraise</a>
+              <a className="nav-link btn btn-outline-custom-primary" href="/Signup/Register.html">Fundraise</a>
             </li>
           </ul>
         </div>

@@ -8,15 +8,14 @@ const styles = {
     hero: {
     
       position: 'relative',
-      backgroundImage: 'url(/images/background.png)', // Add your background image here
+      backgroundImage: 'url(/images/background.png)', 
       backgroundSize: 'cover',
       backgroundPosition: 'center',
-      height: '100vh', // Adjust the height as needed
+      height: '100vh', 
       display: 'flex',
       justifyContent: 'center',
       alignItems: 'center',
-      color: '#fff', // Text color
-      
+      color: '#fff', 
 },
 heroOverlay: {
   position: 'absolute',
@@ -24,14 +23,14 @@ heroOverlay: {
   left: 0,
   width: '100%',
   height: '100%',
-  background: 'rgba(0, 0, 0, 0.5)', // Overlay color
-  zIndex: 1, // Overlay should be below the text and buttons
+  background: 'rgba(0, 0, 0, 0.5)', 
+  zIndex: 1, 
 },
 
   
     heroContent: {
       position: 'relative',
-      zIndex: 2, // Ensures content is on top of the overlay
+      zIndex: 2, 
     },
   
     heroTitle: {
@@ -45,7 +44,7 @@ heroOverlay: {
       marginBottom: '2rem',
     },
 
-    // HomePageStyles.js (add this to your existing styles)
+    // HomePageStyles.js 
 searchBar: {
   marginTop: '2rem',
   padding: '1rem',
@@ -53,23 +52,22 @@ searchBar: {
   borderRadius: '8px',
 },
   
-    // Updated button styles to replace glassmorphism and apply the new button styles
     ctaButton: {
       margin: '0 10px',
       padding: '20px 30px',
       fontSize: '1rem',
       fontWeight: 'bold',
       color: '#fff',
-      backgroundColor: '#28a745',  // Solid background color for button
-      borderColor: '#28a745',      // Ensure border matches background
+      backgroundColor: '#28a745',  
+      borderColor: '#28a745',     
       borderRadius: '12px',
       cursor: 'pointer',
       transition: 'background-color 0.3s, transform 0.2s',
     },
   
     ctaButtonHover: {
-      backgroundColor: '#1e8b5f',  // Slightly darker color on hover
-      transform: 'scale(1.05)',     // Hover effect for scaling
+      backgroundColor: '#1e8b5f',  
+      transform: 'scale(1.05)',     
     },
   
     // Optional: Add outline button styles
