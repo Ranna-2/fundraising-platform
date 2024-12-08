@@ -1,0 +1,98 @@
+body {
+  font-family: Arial, sans-serif;
+  background-color: #d2d2d2;
+  color: #333;
+}
+
+    /* Navbar Styles */
+    .navbar {
+      background-color: rgba(255, 255, 255, 0.9); /* Semi-transparent background */
+    }
+
+    .navbar .nav-link {
+      color: #555;
+      font-weight: 500;
+    }
+
+    .navbar .nav-link:hover {
+      color: #28a745;
+    }
+
+    .navbar .btn.btn-custom-primary {
+      background-color: #28a745;
+      border: none;
+      color: white;
+    }
+
+    .navbar .btn.btn-outline-custom-primary {
+      background-color: transparent;
+      border-color: #28a745;
+      color: #28a745;
+    }
+
+    .navbar .btn.btn-outline-custom-primary:hover {
+      background-color: #28a745;
+      color: white;
+    }
+
+.container {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  margin-bottom: 20px;
+}
+
+#donation-options button {
+  padding: 10px 20px;
+  background-color: #28a745;
+  color: white;
+  border: none;
+  border-radius: 5px; /* Added border-radius for button styling */
+  cursor: pointer; /* Added cursor pointer for better UX */
+}
+
+#donation-options button:hover {
+  background-color: #218838; /* Darker green on hover */
+}
+
+/* Additional styles for payment methods */
+.payment-method {
+  padding: 5px;
+  border: 1px solid #ddd;
+  border-radius: 3px;
+  display: flex;
+  align-items: center;
+}
+
+.payment-method i {
+  margin-right: 10px; /* Space between icon and text */
+}
+
+.campaign-img {
+  width: 100%; /* Full width */
+  height: auto; /* Maintain aspect ratio */
+  border-radius: 8px; /* Rounded corners */
+}
+
+   /* Donation Card Styles */
+   .donation-card {
+    width: 100px; /* Increased width */
+    height: 50px; /* Increased height */
+    text-align: center;
+    border-radius: 10px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    margin: 10px;
+    cursor: pointer;
+    display: inline-block;
+    transition: transform 0.3s ease, background 0.3s ease;
+    background: linear-gradient(135deg, #252424, #868380); /* Gradient background */
+    color: rgb(236, 229, 229); /* Text color */
+    line-height: 50px; /* Center text vertically */
+    font-size: 1 rem; /* Font size */
+  }
+
+  .donation-card:hover {
+    transform: scale(1.1);
+    background: linear-gradient(135deg, #dd4552, #f29077); /* Reverse gradient on hover */
+  }
