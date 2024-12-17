@@ -131,7 +131,62 @@ searchBar: {
       background: '#333',
       color: '#fff',
     },
+
+    featuredCampaigns: {
+      padding: '2rem',
+      backgroundColor: '#f9f9f9',
+      textAlign: 'center',
+  },
+
+  campaignsContainer: {
+      display: 'flex',
+      justifyContent: 'space-between',
+      gap: '20px',
+  },
+
+  donateButton: {
+      backgroundColor: '#28a745',
+      color: 'white',
+      border: 'none',
+      padding: '10px 20px',
+      borderRadius: '5px',
+      cursor: 'pointer',
+      transition: 'background-color 0.3s',
+  },
+
+
+  features: {
+    display: 'flex',
+    justifyContent: 'space-between',
+    padding: '2rem',
+    backgroundColor: '#f4f4f4',
+},
+featureCard: {
+    flex: '1',
+    textAlign: 'center',
+    padding: '1rem',
+    margin: '0 15px',
+},
+featureIconContainer: {
+    display: 'flex',
+    justifyContent: 'center',
+    alignItems: 'center',
+    height: '100px', // Fixed height for icon container
+    marginBottom: '15px',
+},
+featureImage: {
+    maxWidth: '80px',      // Limit maximum width
+    maxHeight: '80px',     // Limit maximum height
+    width: 'auto',         // Maintain aspect ratio
+    height: 'auto',        // Maintain aspect ratio
+    objectFit: 'contain',  // Ensure the entire image is visible
+},
+    
   };
+
+  
+  
   
   export default styles;
+  
   

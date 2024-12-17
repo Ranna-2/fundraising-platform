@@ -2,6 +2,8 @@ import React from 'react';
 import styles from './HomePageStyles';
 import NavBar from './NavBar';
 import SearchBar from './SearchBar';
+import FeaturedCampaignsSection from './FeaturedCampaignsSection';
+import FeaturedSection from './FeaturesSection';
 
 const HomePage = () => {
     return (
@@ -24,24 +26,9 @@ const HomePage = () => {
             </div>
 
             {/* Features Section */}
-            <div style={styles.features}>
-                <div style={styles.featureCard}>
-                    <i style={styles.featureIcon} className="fa fa-bullhorn"></i>
-                    <h3>Easy to Use</h3>
-                    <p>Create a campaign in minutes and share it with your network.</p>
-                </div>
-                <div style={styles.featureCard}>
-                    <i style={styles.featureIcon} className="fa fa-lock"></i>
-                    <h3>Secure Payments</h3>
-                    <p>Your transactions are safe and encrypted.</p>
-                </div>
-                <div style={styles.featureCard}>
-                    <i style={styles.featureIcon} className="fa fa-chart-line"></i>
-                    <h3>Track Progress</h3>
-                    <p>Monitor your fundraising in real-time.</p>
-                </div>
-            </div>
-
+            
+            <FeaturedSection />
+            <FeaturedCampaignsSection />
             
 
             {/* Footer */}
