@@ -12,7 +12,7 @@ const FeaturedCampaignsSection = () => {
                     <div className="card-content">
                         <h3>Food & Water Relief</h3>
                         <p>Delivering essential food supplies and clean drinking water to affected regions after a disaster.</p>
-                        <button className="donate-btn" style={styles.donateButton}>Donate Now</button>
+                        <a href="Donation.html" className="donate-btn" style={styles.donateButton}>Donate Now</a>
                     </div>
                 </div>
                 <div className="program-card">
