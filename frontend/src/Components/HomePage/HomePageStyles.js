@@ -17,6 +17,8 @@ const styles = {
       justifyContent: 'center',
       alignItems: 'center',
       color: '#fff', 
+      position : 'relative',
+      padding : '20px',
   },
   heroOverlay: {
       position: 'absolute',
@@ -33,9 +35,13 @@ const styles = {
       marginBottom: '1rem',
   },
   heroContent: {
-      position: 'relative',
-      zIndex: 2, 
+    display: 'flex',
+    flexDirection: 'column',
+    alignItems: 'center',
+    justifyContent: 'center', 
+      zIndex: 1, 
   },
+
   heroSubtitle: {
       fontSize: '1.5rem',
       marginBottom: '2rem',
@@ -43,10 +49,13 @@ const styles = {
 
   // Search bar styles
   searchBar: {
-      marginTop: '2rem',
+      marginTop: '20px',
       padding: '1rem',
       backgroundColor: '#f9f9f9',
       borderRadius: '8px',
+      zIndex :3,
+      position: 'relative',
+      width: '100%',
   },
 
   // Call to action button styles
@@ -66,6 +75,13 @@ const styles = {
       backgroundColor: '#1e8b5f',  
       transform: 'scale(1.05)',     
   },
+
+  buttonContainer: {
+    marginTop: '20px', // Add margin to separate buttons from the search bar
+    zIndex: 2, // Ensure it is below the search bar
+    marginBottom: '20px',
+},
+
 
   
   ctaButtonOutline: {
