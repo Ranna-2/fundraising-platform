@@ -5,6 +5,7 @@ const styles = {
       padding: 0,
     },
   
+    
     hero: {
     
       position: 'relative',

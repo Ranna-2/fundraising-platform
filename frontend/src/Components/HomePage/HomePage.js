@@ -5,6 +5,7 @@ import SearchBar from './SearchBar';
 import FeaturedCampaignsSection from './FeaturedCampaignsSection';
 import FeaturedSection from './FeaturesSection';
 import Footer from './Footer';
+import FormPage from './FormPage';
 
 const HomePage = () => {
     return (
@@ -30,7 +31,9 @@ const HomePage = () => {
             
             <FeaturedSection />
             <FeaturedCampaignsSection />
-           
+
+            {/*form page*/}
+           <FormPage/>
 
             {/* Footer */}
             <Footer />
