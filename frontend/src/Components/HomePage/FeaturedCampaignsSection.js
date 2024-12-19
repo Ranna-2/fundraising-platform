@@ -12,7 +12,7 @@ const FeaturedCampaignsSection = () => {
                     <div className="card-content">
                         <h3>Food & Water Relief</h3>
                         <p>Delivering essential food supplies and clean drinking water to affected regions after a disaster.</p>
-                        <a href="Donation.html" className="donate-btn" style={styles.donateButton}>Donate Now</a>
+                        <a href="Donation.html" className="donate-btn" style={{...styles.donateButton, textDecoration: 'none'}}>Donate Now </a>
                     </div>
                 </div>
                 <div className="program-card">
@@ -20,7 +20,7 @@ const FeaturedCampaignsSection = () => {
                     <div className="card-content">
                         <h3>Free Health Checkups</h3>
                         <p>Providing free health checkup camps for underprivileged communities to detect and treat diseases early.</p>
-                        <a href="Donation.html" className="donate-btn" style={styles.donateButton}>Donate Now</a>
+                        <a href="Donation.html" className="donate-btn" style={{...styles.donateButton, textDecoration: 'none'}}>Donate Now </a>
                     </div>
                 </div>
                 <div className="program-card">
@@ -28,7 +28,7 @@ const FeaturedCampaignsSection = () => {
                     <div className="card-content">
                         <h3>School Meal Programs</h3>
                         <p>Ensuring that children in need receive daily meals to keep them healthy and focused in school.</p>
-                        <button className="donate-btn" style={styles.donateButton}>Donate Now</button>
+                        <a href="Donation.html" className="donate-btn" style={{...styles.donateButton, textDecoration: 'none'}}>Donate Now </a>
                     </div>
                 </div>
             </div>

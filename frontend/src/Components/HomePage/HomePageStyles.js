@@ -67,7 +67,7 @@ const styles = {
       transform: 'scale(1.05)',     
   },
 
-  // Optional: Add outline button styles
+  
   ctaButtonOutline: {
       margin: '0 10px',
       padding: '20px 30px',
@@ -157,6 +157,7 @@ const styles = {
       borderRadius: '5px',
       cursor: 'pointer',
       transition: 'background-color 0.3s',
+      
   },
 };
 

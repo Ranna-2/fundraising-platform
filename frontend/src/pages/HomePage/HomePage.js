@@ -20,11 +20,15 @@ const HomePage = () => {
                 <h1 style={styles.heroTitle}>Raise Money for What Matters</h1>
                 <p style={styles.heroSubtitle}>KindledHope.lk is a platform designed to bring together individuals and communities to support causes that matter. By donating or starting your own fundraising campaign, you can make a significant difference in the lives of others.</p>
                 <div>
-                <a href="/Campaign/index.html" style={styles.ctaButton}>Start a Campaign</a>
-                    <button style={styles.ctaButton}>Learn More</button>
+                
+                <a href="Donation.html" className="cta-btn" style={{...styles.ctaButton, textDecoration: 'none'}}>Start a Campaign </a>
+                <a href="Donation.html" className="cta-btn" style={{...styles.ctaButton, textDecoration: 'none'}}> Learn More </a>
+                   
                 </div>
+             
                 <SearchBar />
             </div>
+            
             </div>
 
             {/* Features Section */}
