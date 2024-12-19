@@ -1,11 +1,11 @@
 import React from 'react';
-import styles from './HomePageStyles';
-import NavBar from './NavBar';
-import SearchBar from './SearchBar';
-import FeaturedCampaignsSection from './FeaturedCampaignsSection';
-import FeaturedSection from './FeaturesSection';
-import Footer from './Footer';
-import FormPage from './FormPage';
+import styles from '../../Components/HomePage/HomePageStyles'; 
+import NavBar from '../../Components/HomePage/NavBar'; 
+import SearchBar from '../../Components/HomePage/SearchBar'; 
+import FeaturedCampaignsSection from '../../Components/HomePage/FeaturedCampaignsSection'; 
+import FeaturedSection from '../../Components/HomePage/FeaturesSection'; 
+import Footer from '../../Components/HomePage/Footer'; 
+import FormPage from '../../Components/HomePage/FormPage'; 
 
 const HomePage = () => {
     return (
