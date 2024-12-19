@@ -53,7 +53,7 @@ const FormPage = () => {
   return (
     <PageWrapper>
       <PageHeadingWrapper>
-        <TextOne>Contact US</TextOne>
+        <TextOne>Contact Us</TextOne>
         <TextTwo>Any Question or remarks? Just write us a message</TextTwo>
       </PageHeadingWrapper>
       <FormContainer>
