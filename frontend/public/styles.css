@@ -4,36 +4,37 @@ body {
   color: #333;
 }
 
-    /* Navbar Styles */
-    .navbar {
-      background-color: rgba(255, 255, 255, 0.9); /* Semi-transparent background */
-    }
+   /* Navbar Styles */
+.navbar .nav-link {
+  color: #000000;
+  font-weight: 500;
+}
 
-    .navbar .nav-link {
-      color: #555;
-      font-weight: 500;
-    }
+.navbar .nav-link:hover {
+  color: #28a745;
+}
 
-    .navbar .nav-link:hover {
-      color: #28a745;
-    }
+.navbar .nav-item {
+  margin-right: 10px; 
+}
 
-    .navbar .btn.btn-custom-primary {
-      background-color: #28a745;
-      border: none;
-      color: white;
-    }
+.navbar .btn.btn-custom-primary {
+  background-color: #28a745;
+  border: none;
+  color: white;
+}
 
-    .navbar .btn.btn-outline-custom-primary {
-      background-color: transparent;
-      border-color: #28a745;
-      color: #28a745;
-    }
+.navbar .btn.btn-outline-custom-primary {
+  background-color: transparent;
+  border-color: #28a745;
+  color: #28a745;
+}
 
-    .navbar .btn.btn-outline-custom-primary:hover {
-      background-color: #28a745;
-      color: white;
-    }
+.navbar .btn.btn-outline-custom-primary:hover {
+  background-color: #28a745;
+  color: white;
+}
+
 
 .container {
   background-color: #fff;
