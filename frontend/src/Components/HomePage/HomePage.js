@@ -4,6 +4,7 @@ import NavBar from './NavBar';
 import SearchBar from './SearchBar';
 import FeaturedCampaignsSection from './FeaturedCampaignsSection';
 import FeaturedSection from './FeaturesSection';
+import Footer from './Footer';
 
 const HomePage = () => {
     return (
@@ -29,12 +30,10 @@ const HomePage = () => {
             
             <FeaturedSection />
             <FeaturedCampaignsSection />
-            
+           
 
             {/* Footer */}
-            <footer style={styles.footer}>
-                <p>© 2023 Crowdfunding Platform. All rights reserved.</p>
-            </footer>
+            <Footer />
         </div>
     );
 };
