@@ -1,12 +1,12 @@
 import React from 'react';
-import './NavBarStyles.css';  
+import './NavBarStyles.css'; // Import the CSS file
 import { Link } from 'react-router-dom';
 
 const NavBar = () => {
   return (
     <nav className="navbar navbar-expand-lg navbar-light bg-light">
       <div className="container">
-        <a className="navbar-brand" href="/">
+        <Link className="navbar-brand" to="/">
           <img 
             src="/images/logo.png" 
             alt="KindledHope.lk" 
@@ -15,7 +15,7 @@ const NavBar = () => {
           <span style={{ marginLeft: "10px", color: "#fff", fontWeight: "bold" }}>
             KindledHope.lk
           </span>
-        </a>
+        </Link>
         <button
           className="navbar-toggler"
           type="button"
@@ -30,7 +30,7 @@ const NavBar = () => {
         <div className="collapse navbar-collapse" id="navbarNav">
           <ul className="navbar-nav ms-auto align-items-center">
             <li className="nav-item">
-            <Link className="nav-link" to="/">Home</Link> {/* Link to HomePage */}
+              <Link className="nav-link" to="/">Home</Link>
             </li>
             <li className="nav-item">
               <a className="nav-link" href="/Campaign/index.html">Campaigns</a>
@@ -51,7 +51,6 @@ const NavBar = () => {
                 <li><a className="dropdown-item" href="#">Tamil</a></li>
               </ul>
             </li>
-            
             <li className="nav-item dropdown">
               <a
                 className="nav-link dropdown-toggle"
@@ -70,11 +69,13 @@ const NavBar = () => {
               </ul>
             </li>
             <li className="nav-item">
-            <a className="nav-link btn btn-custom-primary text-white" href="/Login/login.html">Donate</a>
-              
+              <a className="nav-link btn btn-custom-primary text-white" href="/Login/login.html">Donate</a>
             </li>
             <li className="nav-item">
               <a className="nav-link btn btn-outline-custom-primary" href="/Signup/Register.html">Fundraise</a>
+            </li>
+            <li className="nav-item">
+              <Link className="nav-link" to="/admin">Admin</Link>
             </li>
           </ul>
         </div>
@@ -84,3 +85,4 @@ const NavBar = () => {
 };
 
 export default NavBar;
+

@@ -6,6 +6,7 @@ import FeaturedCampaignsSection from '../../Components/HomePage/FeaturedCampaign
 import FeaturedSection from '../../Components/HomePage/FeaturesSection'; 
 import Footer from '../../Components/HomePage/Footer'; 
 import FormPage from '../../Components/HomePage/FormPage'; 
+import Testimonial from '../../Components/HomePage/Testimonials';
 import { Link } from 'react-router-dom'; // Import Link for routing
 import '../../Components/HomePage/HomePage.css'; // Import custom CSS for animations and styles
 
@@ -30,6 +31,7 @@ const HomePage = () => {
             {/* Features Section */}
             <FeaturedSection />
             <FeaturedCampaignsSection />
+            <Testimonial/>
             {/* Form Page */}
             <FormPage/>
             {/* Footer */}
