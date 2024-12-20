@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Help Center</title>
+  <!-- External CSS File -->
+  <link rel="stylesheet" href="styles.css">
+  <script src="script.js"></script>
+  <!-- Font Awesome for Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+
+<body>
+  <!-- Header Section -->
+  <header class="header">
+    <img src="header-image.jpg" alt="Help Center Banner" class="header-image">
+    <div class="overlay">
+      <div class="container">
+        <div class="centered-content">
+          <h1 class="title">Help Center</h1>
+          <p class="subtitle">Your one-stop destination for support and resources</p>
+          <div class="search-bar">
+            <input type="text" placeholder="Search for help topics..." aria-label="Search bar" />
+            <button>Search</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- Resources Section -->
+    <section class="resources">
+      <div class="container">
+        <h2 class="section-title">How can we help you?</h2>
+        <div class="resource-grid">
+       
+          <!-- FAQs -->
+          <div class="resource-item">
+            <i class="fas fa-question-circle fa-3x"></i>
+            <h3>FAQs</h3>
+            <p>Find answers to frequently asked questions.</p>
+            <a href="#faq-section" button class="resource-link">View FAQs</a>
+          </div>
+          <!-- Guides -->
+          <div class="resource-item">
+            <i class="fas fa-route fa-3x"></i>
+            <h3>Guides</h3>
+            <p>Follow step-by-step instructions to resolve issues.</p>
+            <button class="resource-link">View Tutorial</button>
+          </div>
+          <!-- Live Chat -->
+          <div class="resource-item">
+            <i class="fas fa-comments fa-3x"></i>
+            <h3>Support</h3>
+            <p>Connect with our support team instantly.</p>
+            <button class="resource-link">Contact</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Featured Articles Section -->
+<section class="featured-articles">
+  <div class="container">
+    <h2 class="section-title">Featured Articles</h2>
+    <div class="article-grid">
+      <!-- Article 1: Getting Started -->
+      <div class="article-item">
+        <img src="featured1.jpg" alt="Getting Started">
+        <h3>Getting Started</h3>
+        <p>Learn how to set up your account.</p>
+        <a href="#getting-started" class="read-more">Read More</a>
+      </div>
+      <!-- Article 2: Managing Payments -->
+      <div class="article-item">
+        <img src="featured2.jpg" alt="Managing Payments">
+        <h3>Managing Payments</h3>
+        <p>Step-by-step guide for payment issues.</p>
+        <a href="#manage-payment" class="read-more">Read More</a>
+      </div>
+      <!-- Article 3: Security Tips -->
+      <div class="article-item">
+        <img src="featured3.jpg" alt="Security Tips">
+        <h3>Security Tips</h3>
+        <p>Keep your account secure with these tips.</p>
+        <a href="#security-tips" class="read-more">Read More</a>
+      </div>
+      <!-- Article 4: Transferring Funds -->
+      <div class="article-item">
+        <img src="featured4.jpg" alt="Transferring Funds">
+        <h3>Transferring Funds</h3>
+        <p>How to transfer funds safely and quickly.</p>
+        <a href="#transferring-funds" class="read-more">Read More</a>
+      </div>
+      <!-- Article 5: Donation -->
+      <div class="article-item">
+        <img src="featured5.jpg" alt="Donation">
+        <h3>Donation</h3>
+        <p>Learn how to make donations easily.</p>
+        <a href="#donation" class="read-more">Read More</a>
+      </div>
+      <!-- Article 6: Trust and Safety -->
+      <div class="article-item">
+        <img src="featured6.jpg" alt="Trust and Safety">
+        <h3>Trust and Safety</h3>
+        <p>Important tips for ensuring trust and safety online.</p>
+        <a href="#trust-safety" class="read-more">Read More</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+    <!-- More Detailed Guides Section -->
+<section class="more-guides">
+  <div class="container">
+    <h2 class="section-title">More Detailed Guides</h2>
+
+    <!-- Getting Started Guide -->
+    <div class="guide" id="getting-started">
+      <h3 class="guide-title">How to Get Started</h3>
+      <p class="guide-description">Follow these simple steps to set up your account and get started:</p>
+      <ul class="guide-steps">
+        <li><i class="fas fa-check-circle step-icon"></i><span class="step-text">Sign Up - Click on the "Sign Up" button at the top right of the page. Fill in your personal information and create a password.</span></li>
+        <li><i class="fas fa-check-circle step-icon"></i><span class="step-text">Verify Your Email - Check your inbox for a verification email. Click the verification link to activate your account.</span></li>
+        <li><i class="fas fa-check-circle step-icon"></i><span class="step-text">Login - Use your email and password to log in to your account.</span></li>
+        <li><i class="fas fa-check-circle step-icon"></i><span class="step-text">Update Profile - Fill out your profile with your preferences, contact details, and payment method.</span></li>
+        <li><i class="fas fa-check-circle step-icon"></i><span class="step-text">Explore Services - Browse our available services and choose the ones that suit your needs.</span></li>
+      </ul>
+    </div>
+
+    <!-- Payment Management Guide -->
+    <div class="guide" id="manage-payment">
+      <h3 class="guide-title">Step-by-Step Guide for Managing Payments</h3>
+      <p class="guide-description">If you're experiencing payment issues, follow these steps to resolve them:</p>
+      <ul class="guide-steps">
+        <li><i class="fas fa-check-circle step-icon"></i><span class="step-text">Check Your Payment Method - Ensure that your payment method is valid and has sufficient funds.</span></li>
+        <li><i class="fas fa-check-circle step-icon"></i><span class="step-text">Verify Transaction Details - Review the transaction for any discrepancies, such as incorrect amounts or dates.</span></li>
+        <li><i class="fas fa-check-circle step-icon"></i><span class="step-text">Retry Payment - If your payment failed, try again with the correct details or choose another payment method.</span></li>
+        <li><i class="fas fa-check-circle step-icon"></i><span class="step-text">Contact Support - If the issue persists, reach out to our support team through live chat for immediate assistance.</span></li>
+      </ul>
+    </div>
+
+    <!-- Security Tips Guide -->
+    <div class="guide" id="security-tips">
+      <h3 class="guide-title">How to Keep Your Account Secure</h3>
+      <p class="guide-description">Follow these tips to protect your account from unauthorized access:</p>
+      <ul class="guide-steps">
+        <li><i class="fas fa-check-circle step-icon"></i><span class="step-text">Enable Two-Factor Authentication - Add an extra layer of security by enabling two-factor authentication in your account settings.</span></li>
+        <li><i class="fas fa-check-circle step-icon"></i><span class="step-text">Use Strong Passwords - Ensure your password is unique and contains a combination of letters, numbers, and special characters.</span></li>
+        <li><i class="fas fa-check-circle step-icon"></i><span class="step-text">Regularly Update Password - Change your password regularly to maintain account security.</span></li>
+        <li><i class="fas fa-check-circle step-icon"></i><span class="step-text">Monitor Your Account Activity - Keep an eye on recent account activity and report any suspicious actions to support immediately.</span></li>
+      </ul>
+    </div>
+
+    <!-- Transferring Funds Guide -->
+    <div class="guide" id="transferring-funds">
+      <h3 class="guide-title">How to Transfer Funds</h3>
+      <p class="guide-description">Follow these steps to transfer funds safely and securely:</p>
+      <ul class="guide-steps">
+        <li><i class="fas fa-check-circle step-icon"></i><span class="step-text">Choose a Transfer Method - Select the method you'd like to use for transferring funds (e.g bank transfer, PayPal etc...).</span></li>
+        <li><i class="fas fa-check-circle step-icon"></i><span class="step-text">Enter Transfer Details - Input the recipient’s information, transfer amount, and any required reference details.</span></li>
+        <li><i class="fas fa-check-circle step-icon"></i><span class="step-text">Review & Confirm - Double-check all information before confirming the transfer.</span></li>
+        <li><i class="fas fa-check-circle step-icon"></i><span class="step-text">Complete Transfer - Click on "Transfer" to complete the process. You'll receive a confirmation email once the transfer is processed.</span></li>
+      </ul>
+    </div>
+
+    <!-- Donation Guide -->
+    <div class="guide" id="donation">
+      <h3 class="guide-title">How to Make a Donation</h3>
+      <p class="guide-description">Follow these steps to make a donation:</p>
+      <ul class="guide-steps">
+        <li><i class="fas fa-check-circle step-icon"></i><span class="step-text">Choose the Cause - Select the cause you want to donate to from the list of available options.</span></li>
+        <li><i class="fas fa-check-circle step-icon"></i><span class="step-text">Enter Donation Amount - Choose the amount you'd like to donate. You can also select a recurring donation option.</span></li>
+        <li><i class="fas fa-check-circle step-icon"></i><span class="step-text">Provide Payment Information - Enter your payment details to process the donation securely.</span></li>
+        <li><i class="fas fa-check-circle step-icon"></i><span class="step-text">Confirm & Donate - Review your donation details and confirm the transaction.</span></li>
+      </ul>
+    </div>
+
+    <!-- Trust and Safety Guide -->
+    <div class="guide" id="trust-safety">
+      <h3 class="guide-title">Trust and Safety Tips</h3>
+      <p class="guide-description">Follow these tips to ensure your trust and safety online:</p>
+      <ul class="guide-steps">
+        <li><i class="fas fa-check-circle step-icon"></i><span class="step-text">Use Verified Platforms - Always use trusted and verified platforms for transactions and communications.</span></li>
+        <li><i class="fas fa-check-circle step-icon"></i><span class="step-text">Report Suspicious Activity - Immediately report any suspicious activity to the relevant authorities or platform support.</span></li>
+        <li><i class="fas fa-check-circle step-icon"></i><span class="step-text">Avoid Sharing Sensitive Information - Do not share sensitive information such as passwords or financial details with anyone.</span></li>
+        <li><i class="fas fa-check-circle step-icon"></i><span class="step-text">Stay Informed - Keep yourself updated on best practices for online safety and security.</span></li>
+      </ul>
+    </div>
+
+  </div>
+</section>
+
+
+      </div>
+    </section>
+  </main>
+  
+ <!-- Add this FAQ Section before the Footer -->
+<!-- FAQ Section -->
+<section class="faq-section" id="faq-section" >
+  <div class="container">
+    <h2 class="section-title">Frequently Asked Questions</h2>
+    <div class="faq-container">
+      <!-- FAQ 1 -->
+      <div class="faq-item">
+        <input type="checkbox" id="faq1" class="faq-checkbox">
+        <label for="faq1" class="faq-question">
+          What is the purpose of the Help Center? 
+          <span class="faq-icon">+</span>
+        </label>
+        <div class="faq-answer">
+          <p>The Help Center provides resources, guides, and support to assist you in resolving issues and finding solutions efficiently.</p>
+        </div>
+      </div>
+      <!-- FAQ 2 -->
+      <div class="faq-item">
+        <input type="checkbox" id="faq2" class="faq-checkbox">
+        <label for="faq2" class="faq-question">
+          How do I reset my password? 
+          <span class="faq-icon">+</span>
+        </label>
+        <div class="faq-answer">
+          <p>You can reset your password by visiting the login page, clicking on "Forgot Password," and following the instructions sent to your email.</p>
+        </div>
+      </div>
+      <!-- FAQ 3 -->
+      <div class="faq-item">
+        <input type="checkbox" id="faq3" class="faq-checkbox">
+        <label for="faq3" class="faq-question">
+          How can I contact customer support? 
+          <span class="faq-icon">+</span>
+        </label>
+        <div class="faq-answer">
+          <p>Contact our support team via live chat on our website or through the "Contact Us" section to submit a query.</p>
+        </div>
+      </div>
+      <!-- FAQ 4 -->
+      <div class="faq-item">
+        <input type="checkbox" id="faq4" class="faq-checkbox">
+        <label for="faq4" class="faq-question">
+          Is my account information secure? 
+          <span class="faq-icon">+</span>
+        </label>
+        <div class="faq-answer">
+          <p>Yes, your account information is protected with advanced encryption methods and secure storage protocols.</p>
+        </div>
+      </div>
+      <!-- FAQ 5 -->
+      <div class="faq-item">
+        <input type="checkbox" id="faq5" class="faq-checkbox">
+        <label for="faq5" class="faq-question">
+          Can I change my subscription plan? 
+          <span class="faq-icon">+</span>
+        </label>
+        <div class="faq-answer">
+          <p>Yes, you can upgrade or downgrade your subscription plan anytime from your account settings.</p>
+        </div>
+      </div>
+      <!-- FAQ 6 -->
+      <div class="faq-item">
+        <input type="checkbox" id="faq6" class="faq-checkbox">
+        <label for="faq6" class="faq-question">
+          What payment methods are accepted? 
+          <span class="faq-icon">+</span>
+        </label>
+        <div class="faq-answer">
+          <p>We accept payments via credit/debit cards, PayPal and direct bank transfers.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+  <!-- New Footer Section -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-content">
+        <p>&copy; 2024 Crowdfunding Platform. All rights reserved.</p>
+        <ul class="footer-links">
+          <li><a href="#">Privacy Policy</a></li>
+          <li><a href="#">Terms of Service</a></li>
+          <li><a href="#">Contact Us</a></li>
+        </ul>
+      </div>
+    </div>
+  </footer>
+  
+</body>
+
+</html>
+
