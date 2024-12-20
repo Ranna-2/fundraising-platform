@@ -77,8 +77,8 @@ const styles = {
   },
 
   buttonContainer: {
-    marginTop: '20px', // Add margin to separate buttons from the search bar
-    zIndex: 2, // Ensure it is below the search bar
+    marginTop: '20px', 
+    zIndex: 2, 
     marginBottom: '20px',
 },
 
@@ -89,16 +89,16 @@ const styles = {
       padding: '20px 30px',
       fontSize: '1rem',
       fontWeight: 'bold',
-      color: '#28a745', // Green text color
-      backgroundColor: 'transparent', // Transparent background
-      borderColor: '#28a745', // Green border
+      color: '#28a745', 
+      backgroundColor: 'transparent', 
+      borderColor: '#28a745', 
       borderRadius: '12px',
       cursor: 'pointer',
       transition: 'background-color 0.3s, transform 0.2s',
   },
   ctaButtonOutlineHover: {
-      backgroundColor: '#28a745',  // Background becomes green on hover
-      color: '#fff',               // White text color on hover
+      backgroundColor: '#28a745',  
+      color: '#fff',              
   },
 
   // Features section styles
@@ -116,15 +116,15 @@ const styles = {
       display: 'flex',
       justifyContent: 'center',
       alignItems: 'center',
-      height: '100px', // Fixed height for icon container
+      height: '100px', 
       marginBottom: '15px',
   },
   featureImage: {
-      maxWidth: '80px',      // Limit maximum width
-      maxHeight: '80px',     // Limit maximum height
-      width: 'auto',         // Maintain aspect ratio
-      height: 'auto',        // Maintain aspect ratio
-      objectFit: 'contain',  // Ensure the entire image is visible
+      maxWidth: '80px',      
+      maxHeight: '80px',    
+      width: 'auto',         
+      height: 'auto',        
+      objectFit: 'contain',  
   },
 
   // Campaigns section styles
