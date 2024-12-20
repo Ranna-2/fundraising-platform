@@ -6,7 +6,7 @@ const testimonials = [
     {
         name: "Alice Johnson",
         role: "Entrepreneur",
-        testimonial: "This crowdfunding platform helped me raise the funds I needed to launch my startup. The community support was incredible!",
+        testimonial: "KindledHope helped me raise the funds I needed to launch my startup. The community support was incredible!",
         image: "https://th.bing.com/th/id/OIP.OUruZMA7_BwAkDVzHvD_oQHaK3?pid=ImgDet&w=184&h=270&c=7&dpr=1.3",
         rating: 5
     },
@@ -20,7 +20,7 @@ const testimonials = [
     {
         name: "Charlie Brown",
         role: "Artist",
-        testimonial: "Thanks to this platform, I was able to fund my art project and connect with amazing supporters. Highly recommend!",
+        testimonial: "Thanks to KindledHope, I was able to fund my art project and connect with amazing supporters. Highly recommend!",
         image: "https://th.bing.com/th/id/OIP.X7_uZjwc9_aEN5jEtpDrywHaLH?pid=ImgDet&w=184&h=276&c=7&dpr=1.3",
         rating: 5
     }
