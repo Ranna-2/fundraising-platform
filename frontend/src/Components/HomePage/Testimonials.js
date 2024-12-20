@@ -7,21 +7,21 @@ const testimonials = [
         name: "Alice Johnson",
         role: "Entrepreneur",
         testimonial: "This crowdfunding platform helped me raise the funds I needed to launch my startup. The community support was incredible!",
-        image: "https://via.placeholder.com/150",
+        image: "https://th.bing.com/th/id/OIP.OUruZMA7_BwAkDVzHvD_oQHaK3?pid=ImgDet&w=184&h=270&c=7&dpr=1.3",
         rating: 5
     },
     {
         name: "Bob Smith",
         role: "Non-Profit Organizer",
         testimonial: "I was able to gather donations for my charity project in no time. The platform is user-friendly and effective.",
-        image: "https://via.placeholder.com/150",
+        image: "https://th.bing.com/th/id/OIP.vhm3qJupqdo9Afdj5MzKyQHaLF?w=641&h=960&rs=1&pid=ImgDetMain",
         rating: 4
     },
     {
         name: "Charlie Brown",
         role: "Artist",
         testimonial: "Thanks to this platform, I was able to fund my art project and connect with amazing supporters. Highly recommend!",
-        image: "https://via.placeholder.com/150",
+        image: "https://th.bing.com/th/id/OIP.pjwsh9j0RLQLuLoSoGNSUQHaJj?w=736&h=949&rs=1&pid=ImgDetMain",
         rating: 5
     }
 ];
