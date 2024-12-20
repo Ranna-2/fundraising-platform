@@ -16,6 +16,12 @@ const SearchBar = () => {
                         <option value="1">Health</option>
                         <option value="2">Education</option>
                         <option value="3">Environment</option>
+                        <option value="4">Animals</option>
+                        <option value="5">Hunger</option>
+                        <option value="6">Mental Health</option>
+                        <option value="7">Refugees</option>
+                        <option value="8">Disaster Relief</option>
+                        <option value="9">Clean Water</option>
                     </select>
                 </div>
                 <div className="col-md-3">
