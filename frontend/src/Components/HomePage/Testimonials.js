@@ -21,7 +21,7 @@ const testimonials = [
         name: "Charlie Brown",
         role: "Artist",
         testimonial: "Thanks to this platform, I was able to fund my art project and connect with amazing supporters. Highly recommend!",
-        image: "https://th.bing.com/th/id/OIP.pjwsh9j0RLQLuLoSoGNSUQHaJj?w=736&h=949&rs=1&pid=ImgDetMain",
+        image: "https://th.bing.com/th/id/OIP.X7_uZjwc9_aEN5jEtpDrywHaLH?pid=ImgDet&w=184&h=276&c=7&dpr=1.3",
         rating: 5
     }
 ];

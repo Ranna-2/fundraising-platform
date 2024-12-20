@@ -12,9 +12,7 @@ const NavBar = () => {
             alt="KindledHope.lk" 
             style={{ height: "40px" }} 
           />
-          <span style={{ marginLeft: "10px", color: "#fff", fontWeight: "bold" }}>
-            KindledHope.lk
-          </span>
+
         </Link>
         <button
           className="navbar-toggler"
