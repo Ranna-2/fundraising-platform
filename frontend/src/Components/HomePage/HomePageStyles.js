@@ -9,7 +9,7 @@ const styles = {
   // Hero section styles
   hero: {
       position: 'relative',
-      backgroundImage: 'url(/images/background.png)', 
+      backgroundImage: 'url(background.png)', 
       backgroundSize: 'cover',
       backgroundPosition: 'center',
       height: '100vh', 
@@ -49,7 +49,7 @@ const styles = {
 
   // Search bar styles
   searchBar: {
-      marginTop: '20px',
+      marginTop: '10px',
       padding: '1rem',
       backgroundColor: '#f9f9f9',
       borderRadius: '8px',
@@ -77,11 +77,10 @@ const styles = {
   },
 
   buttonContainer: {
-    marginTop: '20px', 
-    zIndex: 2, 
+    marginTop: '20px', // Add margin to separate buttons from the search bar
+    zIndex: 2, // Ensure it is below the search bar
     marginBottom: '20px',
 },
-
 
   
   ctaButtonOutline: {
@@ -89,16 +88,16 @@ const styles = {
       padding: '20px 30px',
       fontSize: '1rem',
       fontWeight: 'bold',
-      color: '#28a745', 
-      backgroundColor: 'transparent', 
-      borderColor: '#28a745', 
+      color: '#28a745', // Green text color
+      backgroundColor: 'transparent', // Transparent background
+      borderColor: '#28a745', // Green border
       borderRadius: '12px',
       cursor: 'pointer',
       transition: 'background-color 0.3s, transform 0.2s',
   },
   ctaButtonOutlineHover: {
-      backgroundColor: '#28a745',  
-      color: '#fff',              
+      backgroundColor: '#28a745',  // Background becomes green on hover
+      color: '#fff',               // White text color on hover
   },
 
   // Features section styles
@@ -116,15 +115,15 @@ const styles = {
       display: 'flex',
       justifyContent: 'center',
       alignItems: 'center',
-      height: '100px', 
+      height: '100px', // Fixed height for icon container
       marginBottom: '15px',
   },
   featureImage: {
-      maxWidth: '80px',      
-      maxHeight: '80px',    
-      width: 'auto',         
-      height: 'auto',        
-      objectFit: 'contain',  
+      maxWidth: '80px',      // Limit maximum width
+      maxHeight: '80px',     // Limit maximum height
+      width: 'auto',         // Maintain aspect ratio
+      height: 'auto',        // Maintain aspect ratio
+      objectFit: 'contain',  // Ensure the entire image is visible
   },
 
   // Campaigns section styles
