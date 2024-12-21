@@ -112,13 +112,13 @@ const InputSide = () => {
     <InputSideWrapper onSubmit={handleSubmit}>
       <InputWrapper>
         <p>Name</p>
-        <Input type="text" required placeholder="Allen Jones" value={name} onChange={nameHandler} />
+        <Input type="text" required placeholder="John Smith" value={name} onChange={nameHandler} />
       </InputWrapper>
       <InputWrapper>
         <p>Email</p>
         <Input
           type="email"
-          placeholder="aljay126@gmail.com"
+          placeholder="JohnSmith@gmail.com"
           value={email}
           onChange={emailHandler}
           required
