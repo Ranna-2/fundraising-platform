@@ -11,7 +11,7 @@ const FeaturedCampaignsSection = () => {
                     <div className="card-content">
                         <h3 className="card-title">Food & Water Relief</h3>
                         <p className="card-description">Delivering essential food supplies and clean drinking water to affected regions after a disaster.</p>
-                        <a href="Donation.html" className="donate-btn">Donate Now</a>
+                        <a href="/campaigndetailspage" className="donate-btn">Donate Now</a>
                     </div>
                 </div>
                 <div className="card">
