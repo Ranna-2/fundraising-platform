@@ -24,7 +24,7 @@ const HomePage = () => {
                     <p className="glass-subtitle">KindledHope.lk is a platform designed to bring together individuals and communities to support causes that matter. By donating or starting your own fundraising campaign, you can make a significant difference in the lives of others.</p>
                     <div className="button-container">
                         <Link to="/fundraiserpage" className="cta-btn">Start a Campaign</Link>
-                        <Link to="/fundraiserpage" className="cta-btn">Learn More</Link>
+                        <Link to="/campaigndetailspage" className="cta-btn">Learn More</Link>
                     </div>  
                     <SearchBar />
                 </div>
