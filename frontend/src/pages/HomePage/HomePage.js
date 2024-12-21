@@ -20,8 +20,8 @@ const HomePage = () => {
             <div className="hero-section">
                 <div className="hero-overlay"></div>
                 <div className="hero-content"> 
-                    <h1 className="hero-title">Raise Money for What Matters</h1>
-                    <p className="hero-subtitle">KindledHope.lk is a platform designed to bring together individuals and communities to support causes that matter. By donating or starting your own fundraising campaign, you can make a significant difference in the lives of others.</p>
+                    <h1 className="glass-title">Raise Money for What Matters</h1>
+                    <p className="glass-subtitle">KindledHope.lk is a platform designed to bring together individuals and communities to support causes that matter. By donating or starting your own fundraising campaign, you can make a significant difference in the lives of others.</p>
                     <div className="button-container">
                         <Link to="/fundraiserpage" className="cta-btn">Start a Campaign</Link>
                         <Link to="/fundraiserpage" className="cta-btn">Learn More</Link>

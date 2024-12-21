@@ -9,7 +9,7 @@ const styles = {
   // Hero section styles
   hero: {
       position: 'relative',
-      backgroundImage: 'url(background.png)', 
+      backgroundImage: 'url(env.png)', 
       backgroundSize: 'cover',
       backgroundPosition: 'center',
       height: '100vh', 
