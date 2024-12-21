@@ -1,0 +1,144 @@
+.campaign-container {
+  font-family: Arial, sans-serif;
+  color: #333;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.campaign-header {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.campaign-header h1 {
+  font-size: 2rem;
+  color: #5a2d82;
+}
+
+.campaign-main {
+  display: flex;
+  gap: 20px;
+}
+
+.campaign-image {
+  flex: 1;
+}
+
+.campaign-image img {
+  width: 100%;
+  border-radius: 8px;
+}
+
+.campaign-progress {
+  margin-top: 10px;
+  text-align: center;
+  font-weight: bold;
+}
+
+.campaign-details {
+  flex: 1;
+  padding: 20px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  background-color: #f9f9f9;
+}
+
+.donation-amount-options {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.amount-btn {
+  padding: 10px 15px;
+  background-color: #5a2d82;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.amount-btn:hover {
+  background-color: #7b47a2;
+}
+
+input[type="number"],
+input[type="text"] {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 20px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.payment-methods {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.payment-btn {
+  padding: 10px 15px;
+  background-color: #0073e6;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.payment-btn:hover {
+  background-color: #005bb5;
+}
+
+.anonymous-option {
+  margin-bottom: 20px;
+}
+
+.donate-now-btn {
+  width: 100%;
+  padding: 15px;
+  background-color: #28a745;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+.donate-now-btn:hover {
+  background-color: #218838;
+}
+
+.campaign-footer {
+  text-align: center;
+  margin-top: 30px;
+  font-weight: bold;
+  color: #5a2d82;
+}
+
+.campaign-description,
+.bank-details {
+margin-top: 20px;
+padding: 15px;
+border: 1px solid #ddd;
+border-radius: 8px;
+background-color: #f9f9f9;
+}
+
+.campaign-description h2,
+.bank-details h2 {
+color: #5a2d82;
+margin-bottom: 10px;
+}
+
+.campaign-description p,
+.bank-details p {
+margin: 0;
+line-height: 1.6;
+}
+
+.bank-details p strong {
+color: #333;
+}
