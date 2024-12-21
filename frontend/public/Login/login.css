@@ -34,7 +34,7 @@ body::before {
   padding: 30px;
   text-align: center;
   border: 1px solid rgba(255, 255, 255, 0.5);
-  backdrop-filter: blur(9px);
+  backdrop-filter: blur(15px);
   -webkit-backdrop-filter: blur(9px);
 }
 
@@ -89,6 +89,7 @@ h2 {
   justify-content: space-between;
   margin: 25px 0 35px 0;
   color: #fff;
+  font-weight: bold;
 }
 
 #remember {
@@ -136,13 +137,13 @@ button:hover {
 .social-login {
     display: flex;
     flex-direction: column;
-    gap: 15px; /* Space between the buttons */
-    margin: 20px 0; /* Space around the social login section */
+    gap: 15px; 
+    margin: 20px 0; 
   }
   
   .register {
     text-align: center;
-    margin-top: 20px; /* Adds space between the register and social-login sections */
+    margin-top: 20px; 
     color: #fff;
   }
   
