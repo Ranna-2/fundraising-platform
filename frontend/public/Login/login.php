@@ -39,16 +39,6 @@ if (isset($_POST['submit'])) {
         // Start session and store user info
         $_SESSION['user_id'] = $user['user_id'];
         $_SESSION['email'] = $user['email'];
-        $_SESSION['role'] = $user['role']; // Store user role in session
-        
-        // Redirect to the appropriate dashboard based on the role
-        if ($user['role'] == 'Donor') {
-          header("Location: donor_dashboard.php");
-        } elseif ($user['role'] == 'Fundraiser') {
-          header("Location: fundraiser_dashboard.php");
-        } elseif ($user['role'] == 'Admin') {
-          header("Location: admin_dashboard.php");
-        }
         exit();
       } else {
         echo "Invalid password.";
