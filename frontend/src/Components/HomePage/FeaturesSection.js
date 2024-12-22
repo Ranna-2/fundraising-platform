@@ -7,7 +7,7 @@ const FeaturesSection = () => {
             <div style={styles.featureCard}>
                 <div style={styles.featureIconContainer}>
                     <img 
-                        src="/images/feature1.png" 
+                        src="/images/features/feature1.png" 
                         alt="Easy to Use" 
                         style={styles.featureImage} 
                     />
@@ -18,7 +18,7 @@ const FeaturesSection = () => {
             <div style={styles.featureCard}>
                 <div style={styles.featureIconContainer}>
                     <img 
-                        src="/images/feature2.png" 
+                        src="/images/features/feature2.png" 
                         alt="Secure Payments" 
                         style={styles.featureImage} 
                     />
@@ -29,7 +29,7 @@ const FeaturesSection = () => {
             <div style={styles.featureCard}>
                 <div style={styles.featureIconContainer}>
                     <img 
-                        src="/images/feature3.png" 
+                        src="/images/features/feature3.png" 
                         alt="Track Progress" 
                         style={styles.featureImage} 
                     />
