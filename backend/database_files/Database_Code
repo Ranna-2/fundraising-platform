@@ -1,0 +1,98 @@
+CREATE DATABASE `Fundarising_platform` CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
+USE `Fundarising_platform`;
+
+CREATE TABLE `Analytics` (
+  `analytics_id` INT AUTO_INCREMENT PRIMARY KEY,
+  `campaign_id` INT DEFAULT NULL,
+  `donation_trends` TEXT DEFAULT NULL,
+  `donor_count` INT DEFAULT NULL,
+  `average_donation` DECIMAL(10,2) DEFAULT NULL,
+  `total_donations` DECIMAL(10,2) DEFAULT NULL,
+  `created_at` DATETIME DEFAULT NULL
+);
+
+CREATE TABLE `Campaigns` (
+  `campaign_id` INT AUTO_INCREMENT PRIMARY KEY,
+  `user_id` INT DEFAULT NULL,
+  `title` VARCHAR(255) NOT NULL,
+  `goal_amount` DECIMAL(10,2) NOT NULL,
+  `description` TEXT DEFAULT NULL,
+  `current_amount` DECIMAL(10,2) DEFAULT NULL,
+  `deadline` DATETIME DEFAULT NULL,
+  `status` VARCHAR(50) DEFAULT NULL,
+  `created_at` DATETIME DEFAULT NULL,
+  `updated_at` DATETIME DEFAULT NULL
+);
+
+CREATE TABLE `Donations` (
+  `donation_id` INT AUTO_INCREMENT PRIMARY KEY,
+  `receipt_id` INT DEFAULT NULL,
+  `user_id` INT DEFAULT NULL,
+  `campaign_id` INT DEFAULT NULL,
+  `amount` DECIMAL(10,2) NOT NULL,
+  `status` VARCHAR(50) DEFAULT NULL,
+  `payment_method` VARCHAR(50) DEFAULT NULL,
+  `donation_date` DATETIME DEFAULT NULL
+);
+
+CREATE TABLE `Messages` (
+  `message_id` INT AUTO_INCREMENT PRIMARY KEY,
+  `user_id` INT DEFAULT NULL,
+  `campaign_id` INT DEFAULT NULL,
+  `content` TEXT NOT NULL,
+  `sent_at` DATETIME DEFAULT NULL
+);
+
+CREATE TABLE `Notifications` (
+  `notification_id` INT AUTO_INCREMENT PRIMARY KEY,
+  `user_id` INT DEFAULT NULL,
+  `content` TEXT NOT NULL,
+  `type` VARCHAR(50) DEFAULT NULL,
+  `created_at` DATETIME DEFAULT NULL
+);
+
+CREATE TABLE `Payments` (
+  `payment_id` INT AUTO_INCREMENT PRIMARY KEY,
+  `donation_id` INT DEFAULT NULL,
+  `payment_method` VARCHAR(50) DEFAULT NULL,
+  `amount` DECIMAL(10,2) NOT NULL,
+  `currency` VARCHAR(10) DEFAULT NULL,
+  `transaction_status` VARCHAR(50) DEFAULT NULL,
+  `receipt_details` TEXT DEFAULT NULL
+);
+
+CREATE TABLE `Receipts` (
+  `receipt_id` INT AUTO_INCREMENT PRIMARY KEY,
+  `donation_id` INT DEFAULT NULL,
+  `receipt_details` TEXT DEFAULT NULL,
+  `created_at` DATETIME DEFAULT NULL
+);
+
+CREATE TABLE `SupportTickets` (
+  `ticket_id` INT AUTO_INCREMENT PRIMARY KEY,
+  `description` TEXT NOT NULL,
+  `status` VARCHAR(50) DEFAULT NULL,
+  `subject` VARCHAR(255) NOT NULL,
+  `user_id` INT DEFAULT NULL,
+  `created_at` DATETIME DEFAULT NULL,
+  `updated_at` DATETIME DEFAULT NULL
+);
+
+CREATE TABLE `Updates` (
+  `update_id` INT AUTO_INCREMENT PRIMARY KEY,
+  `campaign_id` INT DEFAULT NULL,
+  `content` TEXT NOT NULL,
+  `created_at` DATETIME DEFAULT NULL
+);
+
+CREATE TABLE `Users` (
+  `user_id` INT AUTO_INCREMENT PRIMARY KEY,
+  `email` VARCHAR(255) NOT NULL,
+  `password` VARCHAR(255) NOT NULL,
+  `first_name` VARCHAR(100) DEFAULT NULL,
+  `last_name` VARCHAR(100) DEFAULT NULL,
+  `role` VARCHAR(50) DEFAULT NULL,
+  `profile_picture` VARCHAR(255) DEFAULT NULL,
+  `created_at` DATETIME DEFAULT NULL,
+  `updated_at` DATETIME DEFAULT NULL
+);
