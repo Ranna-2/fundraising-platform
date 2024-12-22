@@ -13,34 +13,30 @@ body {
   justify-content: center;
   min-height: 100vh;
   width: 100%;
-  padding: 0 10px;
-}
-
-body::before {
-  content: "";
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  background: url("login.png"), #000;
-  background-position: center;
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-attachment: fixed; 
+  padding: 0;
+  margin: 0;
+  background: url("login.png") center/cover no-repeat, #000;
 }
 
 .wrapper {
-  width: 400px;
+  width: 100%;
+  max-width: 400px;
   border-radius: 8px;
   padding: 30px;
   text-align: center;
+  background: rgba(0, 0, 0, 0.6); /* Adds semi-transparent background */
   border: 1px solid rgba(255, 255, 255, 0.5);
   backdrop-filter: blur(9px);
   -webkit-backdrop-filter: blur(9px);
+  box-sizing: border-box;
+  margin: auto; /* Centers vertically */
+  position: relative; /* Ensures alignment */
 }
 
 form {
   display: flex;
   flex-direction: column;
+  width: 100%;
 }
 
 h2 {
@@ -82,6 +78,40 @@ h2 {
   top: 10px;
   transform: translateY(-120%);
 }
+
+.role-selection {
+  margin: 20px 0;
+  color: #fff;
+  text-align: left;
+}
+
+.role-selection label {
+  font-size: 16px;
+  margin-bottom: 5px;
+  display: block;
+}
+
+.role-selection select {
+  width: 100%;
+  padding: 10px;
+  border-radius: 3px;
+  border: none;
+  background-color: rgba(255, 255, 255, 0.1);
+  color: #fff;
+  font-size: 16px;
+  cursor: pointer;
+  outline: none;
+}
+
+.role-selection select option {
+  background-color: #000;
+  color: #fff;
+}
+
+.role-selection select:focus {
+  border: 2px solid #fff;
+}
+
 
 .forget {
   display: flex;
