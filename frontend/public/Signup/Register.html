@@ -4,30 +4,39 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>SignUp</title>
-  <link rel="stylesheet" href="login.css">
+  <link rel="stylesheet" href="signup.css">
 </head>
 <body>
   <div class="wrapper">
-    <form action="signup.php" method="POST"></form>
-    <form action="#">
+    <form action="signup.php" method="POST">
       <h2>Sign Up</h2>
       
       <!-- Input Fields -->
       <div class="input-field">
-        <input type="text" required>
+        <input type="text" name="full_name" required>
         <label>Enter your full name</label>
       </div>
       <div class="input-field">
-        <input type="email" required>
+        <input type="email" name="email" required>
         <label>Enter your email</label>
       </div>
       <div class="input-field">
-        <input type="password" required>
+        <input type="password" name="password" required>
         <label>Create a password</label>
       </div>
       <div class="input-field">
-        <input type="password" required>
+        <input type="password" name="confirm_password" required>
         <label>Confirm your password</label>
+      </div>
+
+      <!-- Role Selection Dropdown -->
+      <div class="role-selection">
+        <label for="role">Select your role:</label>
+        <select id="role" name="role" required>
+          <option value="" disabled selected>Select a role</option>
+          <option value="Donor">Donor</option>
+          <option value="Fundraiser">Fundraiser</option>
+        </select>
       </div>
       
       <!-- Social Media Login -->
@@ -37,11 +46,11 @@
       </div>
       
       <!-- Submit Button -->
-      <button type="submit">Sign Up</button>
+      <button type="submit" name="submit">Sign Up</button>
       
       <!-- Login Link -->
       <div class="register">
-        <p>Already have an account? <a href="file:///C:/Users/hp/Desktop/crowdfunding_platform/login.html">Login</a></p>
+        <p>Already have an account? <a href="login.html">Login</a></p>
       </div>
     </form>
   </div>

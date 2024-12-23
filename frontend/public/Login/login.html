@@ -8,34 +8,41 @@
 </head>
 <body>
   <div class="wrapper">
-    <form action="#">
+    <form action="login.php" method="POST">
       <h2>Login</h2>
-        <div class="input-field">
-        <input type="text" required>
+      
+      <div class="input-field">
+        <input type="text" name="email" required>
         <label>Enter your email</label>
       </div>
       <div class="input-field">
-        <input type="password" required>
+        <input type="password" name="password" required>
         <label>Enter your password</label>
       </div>
+      
       <div class="forget">
         <label for="remember">
-          <input type="checkbox" id="remember">
+          <input type="checkbox" id="remember" name="remember">
           <p>Remember me</p>
         </label>
         <a href="#">Forgot password?</a>
       </div>
+<<<<<<< HEAD
       <button href="/Campaign/index.html">Log In</button>
 
+=======
+
+      <button type="submit" name="submit">Log In</button>
+>>>>>>> c561ace8dffcf452d6d52e67a38689c3b8ef034a
       
-          <!-- Social Media Login Section -->
+      <!-- Social Media Login Section -->
       <div class="social-login">
         <button type="button" class="google-login">Log in with Google</button>
         <button type="button" class="facebook-login">Log in with Facebook</button>
       </div>
 
       <div class="register">
-        <p>Don't have an account? <a href="#">Register</a></p>
+        <p>Don't have an account? <a href="signup.html">Register</a></p>
       </div>
     </form>
   </div>
