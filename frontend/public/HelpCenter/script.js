@@ -1,5 +1,5 @@
 <script>
-  document.querySelectorAll('.faq-question').forEach(button => {
+  document.querySelectorAll('.faq-question').forEach(button = {
     button.addEventListener('click', () => {
       const active = document.querySelector('.faq-question.active');
       if (active && active !== button) {
@@ -14,6 +14,6 @@
       } else {
         answer.style.maxHeight = null;
       }
-    });
+    })
   });
 </script>
