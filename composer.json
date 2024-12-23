@@ -1,0 +1,7 @@
+{
+  "name": "fundraising/platform",
+  "description": "A description of your project",
+  "require": {
+    "google/apiclient": "^2.10"
+  }
+}
