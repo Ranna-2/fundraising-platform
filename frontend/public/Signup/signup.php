@@ -15,7 +15,8 @@ if ($conn->connect_error) {
 
 // Check if form is submitted
 if (isset($_POST['submit'])) {
-    $full_name = $_POST['full_name'];
+    $first_name = $_POST['first_name'];
+    $last_name = $_POST['last_name'];
     $email = $_POST['email'];
     $password = $_POST['password'];
     $confirm_password = $_POST['confirm_password'];
@@ -29,13 +30,13 @@ if (isset($_POST['submit'])) {
         $hashed_password = password_hash($password, PASSWORD_DEFAULT);
 
         // Prepare SQL query to insert data
-        $sql = "INSERT INTO Users (email, password, full_name, role, created_at) 
-                VALUES (?, ?, ?, ?, NOW())";
+        $sql = "INSERT INTO Users (email, password, first_name, last_name, role, created_at) 
+                VALUES (?, ?, ?, ?, ?, NOW())";
 
         // Prepare the statement
         if ($stmt = $conn->prepare($sql)) {
             // Bind parameters
-            $stmt->bind_param("ssss", $email, $hashed_password, $full_name, $role);
+            $stmt->bind_param("sssss", $email, $hashed_password, $first_name, $last_name, $role);
             
             // Execute the query
             if ($stmt->execute()) {
