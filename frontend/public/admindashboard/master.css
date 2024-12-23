@@ -1,0 +1,91 @@
+/* General Styles */
+body {
+    background: #f1f1f1;
+}
+
+.wrapper {
+    display: flex;
+    width: 100%;
+    align-items: stretch;
+    overflow-x: hidden;
+}
+
+#body {
+    width: 100%;
+    padding: 0;
+    min-height: 100vh;
+}
+
+/* Sidebar Styles */
+#sidebar {
+    background: #343a40;
+    color: #ffffff;
+    min-width: 250px;
+}
+
+.sidebar-header {
+    padding: 20px;
+    background: #007bff;
+}
+
+.sidebar-header h3 {
+    margin: 0;
+    color: #ffffff;
+}
+
+.sidebar-header img {
+    max-width: 100%;
+}
+
+.sidebar-header h3 {
+    font-size: 1.5rem;
+}
+
+/* Card Styles */
+.card {
+    box-shadow: 0 .125rem .5rem rgba(0, 0, 0, .04);
+    border: 1px solid #eaedf1;
+    margin-bottom: 1.5rem;
+    border-radius: 5.2px;
+    overflow: hidden;
+}
+
+.card-header {
+    padding: 15px 20px;
+    background-color: #fff;
+    border-bottom: 1px solid #e7eaf3;
+}
+
+.card-body {
+    padding: 20px;
+}
+
+.card-title {
+    margin: 0;
+}
+
+/* Icon Styles */
+.icon-big {
+    font-size: 3em;
+    min-height: 64px;
+    line-height: 64px;
+}
+
+.detail-subtitle {
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    line-height: 1.6;
+}
+
+.number {
+    font-size: 1.5em;
+    text-align: right;
+    font-weight: bolder;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .card {
+        margin-bottom: 20px;
+    }
+}
