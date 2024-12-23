@@ -1,11 +1,11 @@
 <?php
-require_once 'vendor/autoload.php';
+require_once '../../../vendor/autoload.php';
 
 // Google Client Configuration
 $client = new Google_Client();
 $client->setClientId('342493587366-8ja5ftp0hfempp3lh1a89qqqb31legq6.apps.googleusercontent.com'); // Replace with your Google Client ID
 $client->setClientSecret('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'); // Replace with your Google Client Secret
-$client->setRedirectUri('http://localhost/google_signup.php'); 
+$client->setRedirectUri('http://localhost/FundraisingProject/frontend/public/Signup/google_signup.php');
 $client->addScope('email');
 $client->addScope('profile');
 
@@ -23,11 +23,28 @@ if (isset($_GET['code'])) {
     $email = $google_user->email;
     $full_name = $google_user->name;
 
+    // Split full name into first name and last name
+    $names = explode(' ', $full_name, 2);
+    $first_name = $names[0];
+    $last_name = isset($names[1]) ? $names[1] : '';
+
     // Connect to your database
     $conn = new mysqli('localhost', 'root', '', 'Fundarising_platform');
     if ($conn->connect_error) {
         die("Connection failed: " . $conn->connect_error);
     }
+
+    // Ensure the `Users` table has the correct schema
+    $conn->query("
+        CREATE TABLE IF NOT EXISTS Users (
+            id INT AUTO_INCREMENT PRIMARY KEY,
+            email VARCHAR(255) NOT NULL UNIQUE,
+            first_name VARCHAR(255),
+            last_name VARCHAR(255),
+            role VARCHAR(50),
+            created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+        )
+    ");
 
     // Check if the user already exists
     $stmt = $conn->prepare("SELECT * FROM Users WHERE email = ?");
@@ -36,17 +53,17 @@ if (isset($_GET['code'])) {
     $result = $stmt->get_result();
 
     if ($result->num_rows > 0) {
-        echo "You are already registered! <a href='login.html'>Log in</a>";
+        echo "You are already registered! <a href='../donation.html'>Log in</a>";
     } else {
         // Insert new user with 'Donor' as the default role
         $role = 'Donor';
-        $sql = "INSERT INTO Users (email, full_name, role, created_at) VALUES (?, ?, ?, NOW())";
+        $sql = "INSERT INTO Users (email, first_name, last_name, role, created_at) VALUES (?, ?, ?, ?, NOW())";
         $stmt = $conn->prepare($sql);
-        $stmt->bind_param("sss", $email, $full_name, $role);
+        $stmt->bind_param("ssss", $email, $first_name, $last_name, $role);
         
         if ($stmt->execute()) {
             // Redirect to login after successful registration
-            echo "Registration successful! You can now <a href='login.html'>log in</a>";
+            echo "Registration successful! You can now <a href='../donation.html'>continue</a>";
         } else {
             echo "Error: " . $stmt->error;
         }
