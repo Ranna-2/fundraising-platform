@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Charity for a Better World</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+
+    </head>
+
+<body>
+    <!-- Sidebar -->
+    <div class="sidebar">
+        <h2 style="text-align: center; color: #38f05f;"><b>Campaigns</b></h2>
+        <a href="healthcare.html" id="healthcare"><i class="fas fa-heartbeat"></i> Healthcare</a>
+        <a href="education.html"><i class="fas fa-book"></i> Education</a>
+        <a href="animal.html"><i class="fas fa-paw"></i> Animals</a>
+        <a href="environment.html"><i class="fas fa-leaf"></i> Environment</a>
+        <a href="hunger.html"><i class="fas fa-utensils"></i> Hunger Relief</a>
+        <a href="cleanwater.html"><i class="fas fa-water"></i> Clean Water</a>
+        <a href="disasterrelief.html"><i class="fas fa-hands-helping"></i> Disaster Relief</a>
+        <a href="mentalhealth.html"><i class="fas fa-brain"></i> Mental Health</a>
+        <a href="refugee.html"><i class="fas fa-user-shield"></i> Refugee Support</a>
+    </div>
+    
+    <!-- Main Content -->
+    <div class="main-content">
+    
+   <!-- Navbar -->
+   <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <div class="container">
+        <a class="navbar-brand" href="/">
+            <img 
+                src="/images/logo.png" 
+                alt="KindledHope.lk" 
+                style="height: 40px;" 
+            />
+            <span style="margin-left: 10px; color: #fff; font-weight: bold;">
+                KindledHope.lk
+            </span>
+        </a>
+        <button
+            class="navbar-toggler"
+            type="button"
+            data-toggle="collapse"
+            data-target="#navbarNav"
+            aria-controls="navbarNav"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+        >
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ms-auto align-items-center">
+                <li class="nav-item">
+                    <a class="nav-link" href="/">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/Campaign/index.html">Campaigns</a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a
+                        class="nav-link dropdown-toggle"
+                        href="#"
+                        id="languageDropdown"
+                        role="button"
+                        data-bs-toggle="dropdown"
+                        aria-expanded="false"
+                    >
+                        English
+                    </a>
+                    <ul class="dropdown-menu" aria-labelledby="languageDropdown">
+                        <li><a class="dropdown-item" href="#">Sinhala</a></li>
+                        <li><a class="dropdown-item" href="#">Tamil</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item dropdown">
+                    <a
+                        class="nav-link dropdown-toggle"
+                        href="#"
+                        id="moreDropdown"
+                        role="button"
+                        data-bs-toggle="dropdown"
+                        aria-expanded="false"
+                    >
+                        More
+                    </a>
+                    <ul class="dropdown-menu" aria-labelledby="moreDropdown">
+                        <li><a class="dropdown-item" href="#">About Us</a></li>
+                        <li><a class="dropdown-item" href="#">How it Works</a></li>
+                        <li><a class="dropdown-item" href="/HelpCenter/index.html">Help Center</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link btn btn-custom-primary text-white" href="/Login/login.html">Donate</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link btn btn-outline-custom-primary" href="/Signup/Register.html">Fundraise</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+        <!-- Header Section -->
+        <header>
+            <h1><b>Charity for a Better World</b></h1>
+            <p>Join us in making the world a better place through meaningful contributions.</p>
+            <a href="#causes" class="explore-btn">Explore Campaigns</a>
+         
+        </header>
+
+        <!-- Causes Section -->
+        <section id="causes">
+            <h2 class="section-title"><b>Our Campaigns</b></h2>
+            <div class="cause-container">
+                <!-- Healthcare -->
+                <div class="cause-card" id="healthcare">
+                    <img src="healthcare.jpg" alt="Healthcare">
+                    <div class="cause-content">
+                        <h3 class="cause-title">Healthcare for All</h3>
+                        <p class="cause-description">Provide access to critical medical resources and aid for underprivileged communities.</p>
+                        <a href="healthcare.html" class="btn-view">View More</a>
+                    </div>
+                </div>
+
+                <!-- Education -->
+                <div class="cause-card" id="education">
+                    <img src="education.jpg" alt="Education">
+                    <div class="cause-content">
+                        <h3 class="cause-title">Education for Everyone</h3>
+                        <p class="cause-description">Provide educational resources, scholarships, and infrastructure for children and adults worldwide.</p>
+                        <a href="education.html" class="btn-view">View More</a>
+                    </div>
+                </div>
+
+                <!-- Animals -->
+                <div class="cause-card" id="animals">
+                    <img src="animals.jpg" alt="Animals">
+                    <div class="cause-content">
+                        <h3 class="cause-title">Protecting Animals</h3>
+                        <p class="cause-description">Support initiatives to rescue and protect animals from cruelty, habitat destruction, and more.</p>
+                        <a href="animal.html" class="btn-view">View More</a>
+                    </div>
+                </div>
+
+                <!-- Environment -->
+                <div class="cause-card" id="environment">
+                    <img src="environment.jpg" alt="Environment">
+                    <div class="cause-content">
+                        <h3 class="cause-title">Saving the Environment</h3>
+                        <p class="cause-description">Contribute to reforestation, clean energy initiatives, and reducing pollution worldwide.</p>
+                        <a href="environment.html" class="btn-view">View More</a>
+                    </div>
+                </div>
+
+                <!-- Hunger Relief -->
+                <div class="cause-card" id="hunger">
+                    <img src="hunger.jpg" alt="Hunger Relief">
+                    <div class="cause-content">
+                        <h3 class="cause-title">Fighting Hunger</h3>
+                        <p class="cause-description">Provide meals and resources to communities struggling with food insecurity.</p>
+                        <a href="hunger.html" class="btn-view">View More</a>
+                    </div>
+                </div>
+
+                <!-- Clean Water -->
+                <div class="cause-card" id="cleanwater">
+                    <img src="cleanwater.jpg" alt="Clean Water">
+                    <div class="cause-content">
+                        <h3 class="cause-title">Access to Clean Water</h3>
+                        <p class="cause-description">Help build wells and provide clean drinking water to communities in need.</p>
+                        <a href="cleanwater.html" class="btn-view">View More</a>
+                    </div>
+                </div>
+
+                <!-- Disaster Relief -->
+                <div class="cause-card" id="disasterrelief">
+                    <img src="disasterrelief.jpg" alt="Disaster Relief">
+                    <div class="cause-content">
+                        <h3 class="cause-title">Disaster Relief</h3>
+                        <p class="cause-description">Provide emergency support, supplies, and aid to disaster-affected communities.</p>
+                        <a href="disasterrelief.html" class="btn-view">View More</a>
+                    </div>
+                </div>
+
+                <!-- Mental Health -->
+                <div class="cause-card" id="mentalhealth">
+                    <img src="mentalhealth.jpg" alt="Mental Health">
+                    <div class="cause-content">
+                        <h3 class="cause-title">Mental Health Awareness</h3>
+                        <p class="cause-description">Support mental health programs and counseling services for those in need.</p>
+                        <a href="mentalhealth.html" class="btn-view">View More</a>
+                    </div>
+                </div>
+
+                <!-- Refugees -->
+                <div class="cause-card" id="refugees">
+                    <img src="refugees.jpg" alt="Refugees">
+                    <div class="cause-content">
+                        <h3 class="cause-title">Support for Refugees</h3>
+                        <p class="cause-description">Provide housing, food, and assistance to displaced individuals and families.</p>
+                        <a href="refugee.html" class="btn-view">View More</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Testimonials Section -->
+        <section class="testimonials">
+            <h2>What Our Donors Say</h2>
+            <p>"This charity is making a real difference in people's lives. I am proud to contribute to such great causes!"</p>
+            <p class="author">- John Doe</p>
+        </section>
+
+        <!-- Footer Section -->
+        <footer>
+            <p>&copy; 2024 Charity for a Better World. All rights reserved. <a href="#">Privacy Policy</a></p>
+           
+        </footer>
+    </div>
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="script.js"></script>
+
+
+</body>
+
+</html>

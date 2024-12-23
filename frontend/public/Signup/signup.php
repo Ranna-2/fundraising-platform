@@ -40,7 +40,7 @@ if (isset($_POST['submit'])) {
             
             // Execute the query
             if ($stmt->execute()) {
-                echo "Registration successful! You can now <a href='login.html'>log in</a>.";
+                echo "Registration successful! You can now <a href='../Login/login.html'>log in</a>.";
             } else {
                 echo "Error: " . $stmt->error;
             }

@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Education Programs</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f8f9fa;
+        }
+
+        header {
+            text-align: center;
+            padding: 2rem;
+            background: linear-gradient(45deg, #01383e,#6be9cf);
+            color: white;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        header h1 {
+            font-size: 3rem;
+            margin-bottom: 0.5rem;
+        }
+
+        header p {
+            font-size: 1.3rem;
+            margin-top: 0.5rem;
+            line-height: 1.6;
+        }
+
+        .programs-container {
+            max-width: 1200px;
+            margin: 2rem auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            padding: 0 1rem;
+        }
+
+        .program-card {
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .program-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
+        }
+
+        .program-card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .program-card .card-content {
+            padding: 1.5rem;
+        }
+
+        .program-card h3 {
+            font-size: 1.8rem;
+            margin: 0.5rem 0;
+            color: #218838;
+        }
+
+        .program-card p {
+            font-size: 1rem;
+            color: #555;
+            line-height: 1.5;
+            margin-bottom: 1rem;
+        }
+
+        .program-card .donate-btn {
+            background: linear-gradient(45deg,#a5229f,#cc084c); 
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 25px;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: background 0.3s ease;
+            text-align: center;
+            width: 100%;
+            text-decoration: none;
+        }
+
+        .program-card .donate-btn:hover {
+            background-color: #1e7e34;
+        }
+
+        .cta-section {
+            background: black;
+            color: white;
+            padding: 2rem;
+            text-align: center;
+        }
+
+        .cta-section h2 {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        .cta-section p {
+            font-size: 1.2rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .cta-section button {
+            padding: 10px 20px;
+            background: #28a745;
+            color: white;
+            border: none;
+            border-radius: 25px;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: background 0.3s ease;
+        }
+
+        .cta-section button:hover {
+            background: #1e7e34;
+        }
+
+        footer {
+            background: #f8f9fa;
+            text-align: center;
+            padding: 1rem;
+            font-size: 0.9rem;
+            color: #888;
+        }
+
+        /* Navbar Styles */
+.navbar {
+    background-color: #1e1e1e; /* Dark background */
+    color: white;
+    padding: 15px 20px;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Logo Styling */
+.navbar .logo {
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: #00ff7f; /* Soft green logo */
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+
+/* Navbar Links Container */
+.navbar .nav-links {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.navbar .nav-links li {
+    margin: 0 10px;
+    position: relative;
+}
+
+/* Navbar Links Styling */
+.navbar .nav-links a {
+    text-decoration: none;
+    color: #ffffff; /* White font */
+    font-size: 1rem;
+    padding: 8px 12px;
+    border-radius: 4px;
+    transition: all 0.3s ease;
+}
+
+.navbar .nav-links a:hover {
+    background-color: #00ff7f; /* Green background on hover */
+    color: #1e1e1ebc; /* Dark text on hover */
+}
+
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .navbar .nav-links {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .navbar .nav-links li {
+        margin: 5px 0;
+    }
+}
+
+    </style>
+</head>
+
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="container">
+            <a href="index.html" class="logo">CharityWorld</a>
+            <ul class="nav-links">
+                <li><a href="index.html"><i class="fas fa-home"></i> Home</a>
+                <li><a href="healthcare.html"><i class="fas fa-heartbeat"></i> Healthcare</a></li>
+                <li><a href="animal.html"><i class="fas fa-paw"></i> Animals</a></li>
+                <li><a href="environment.html"><i class="fas fa-tree"></i> Environment</a></li>
+                <li><a href="hunger.html"><i class="fas fa-utensils"></i> Hunger Relief</a></li>
+                <li><a href="cleanwater.html"><i class="fas fa-tint"></i> Clean Water</a></li>
+                <li><a href="disasterrelief.html"><i class="fas fa-ambulance"></i> Disaster Relief</a></li>
+                <li><a href="mentalhealth.html"><i class="fas fa-brain"></i> Mental Health</a></li>
+                <li><a href="refugee.html"><i class="fas fa-people-carry"></i> Refugee Support</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Header -->
+    <header>
+        <h1>Education Programs</h1>
+        <p>Empowering individuals through accessible and quality education worldwide.</p>
+    </header>
+
+    <!-- Programs Section -->
+    <div class="programs-container">
+        <!-- Program Cards -->
+        <div class="program-card">
+            <img src="education1.jpg" alt="Program 1">
+            <div class="card-content">
+                <h3>Scholarship Programs</h3>
+                <p>Providing scholarships to underprivileged students to help them access higher education opportunities.</p>
+                <a href="../Donation.html" class="donate-btn"> Donate Now</a>
+            </div>
+        </div>
+        <div class="program-card">
+            <img src="education2.jpg" alt="Program 2">
+            <div class="card-content">
+                <h3>School Supplies Initiative</h3>
+                <p>Collecting and distributing school supplies to schools in rural and underserved areas.</p>
+                <a href="../Donation.html" class="donate-btn"> Donate Now</a>
+            </div>
+        </div>
+        <div class="program-card">
+            <img src="education3.jpg" alt="Program 3">
+            <div class="card-content">
+                <h3>Online Learning Platforms</h3>
+                <p>Creating online learning platforms to provide education to students in remote areas.</p>
+                <a href="../Donation.html" class="donate-btn"> Donate Now</a>
+            </div>
+        </div>
+        <div class="program-card">
+            <img src="education4.jpg" alt="Program 4">
+            <div class="card-content">
+                <h3>Adult Education Programs</h3>
+                <p>Offering literacy and vocational training programs to adults seeking to improve their skills and employment opportunities.</p>
+                <a href="../Donation.html" class="donate-btn"> Donate Now</a>
+            </div>
+        </div>
+        <div class="program-card">
+            <img src="education5.jpg" alt="Program 5">
+            <div class="card-content">
+                <h3>Educational Infrastructure</h3>
+                <p>Building and improving educational infrastructure, including classrooms, libraries, and technology labs in underserved regions.</p>
+                <a href="../Donation.html" class="donate-btn"> Donate Now</a>
+            </div>
+        </div>
+        <div class="program-card">
+            <img src="education6.jpg" alt="Program 6">
+            <div class="card-content">
+                <h3>Teacher Training Programs</h3>
+                <p>Providing professional development and training for teachers to improve the quality of education they provide.</p>
+                <a href="../Donation.html" class="donate-btn"> Donate Now</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Call-to-Action Section -->
+    <div class="cta-section">
+        <h2>Join Us in Shaping the Future</h2>
+        <p>Be a part of our mission to make education accessible to all. Explore ways to contribute and support.</p>
+        <button>Get Involved</button>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        &copy; 2024 Education Programs. All Rights Reserved.
+    </footer>
+   
+</body>
+
+</html>
