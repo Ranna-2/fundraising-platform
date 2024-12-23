@@ -1,0 +1,80 @@
+body {
+    background-color: #f8f9fa;
+}
+
+.card {
+    transition: transform 0.2s;
+}
+
+.card:hover {
+    transform: scale(1.02);
+}
+
+
+
+
+
+
+
+
+/* Navbar Styles */
+.navbar .nav-link {
+    color: #000000;
+    font-weight: 500;
+}
+
+.navbar .nav-link:hover {
+    color: #28a745;
+}
+
+.navbar .nav-item {
+    margin-right: 10px; 
+}
+
+.navbar .btn.btn-primary {
+    background-color: #28a745 !important; 
+    border: none;
+    color: white;
+}
+
+.navbar .btn.btn-primary:hover {
+    background-color: #1e7e34 !important;
+    color: white;
+}
+
+.navbar .btn.btn-outline-primary {
+    background-color: transparent;
+    border-color: #28a745 !important;
+    color: #28a745;
+}
+
+.navbar .btn.btn-outline-primary:hover {
+    background-color: #1e7e34;
+    color: white;
+}
+
+
+
+
+.navbar .btn.btn-primary {
+    background-color: #28a745 !important; 
+    border: none;
+    color: white;
+}
+
+.navbar .btn.btn-primary:hover {
+    background-color: #1e7e34 !important;
+    color: white;
+}
+
+.navbar .btn.btn-outline-primary {
+    background-color: transparent;
+    border-color: #28a745 !important;
+    color: #28a745;
+}
+
+.navbar .btn.btn-outline-primary:hover {
+    background-color: #1e7e34;
+    color: white;
+}
+
