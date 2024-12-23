@@ -1,0 +1,157 @@
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f8f9fa;
+        }
+
+        /* Side Navbar Styles */
+        .sidenav {
+            width: 250px;
+            background: #333;
+            color: white;
+            position: fixed;
+            height: 100%;
+           padding-top: 20px;
+        }
+
+        .sidenav a {
+            display: block;
+            color: white;
+            padding: 15px;
+            text-decoration: none;
+            font-size: 1.2rem;
+            transition: background 0.3s
+        }
+
+        .sidenav a i {
+            margin-right: 10px;
+        }
+
+        .sidenav a:hover {
+            background-color: #28a745; /* Green background on hover */
+            color: white; 
+        }
+
+        /* Content Wrapper */
+        .content {
+            margin-left: 260px; /* Space for the sidebar */
+            padding: 20px;
+        }
+
+        header h1 {
+            font-size: 3rem;
+            margin-bottom: 30px;
+        }
+
+        header p {
+            font-size: 1.3rem;
+            margin-top: 0.5rem;
+            line-height: 1.6;
+            color:lightgrey ;
+        }
+
+        .programs-container {
+            max-width: 1200px;
+            margin: 2rem auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            padding: 0 1rem;
+        }
+
+        .program-card {
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .program-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
+        }
+
+        .program-card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .program-card .card-content {
+            padding: 1.5rem;
+        }
+
+        .program-card h3 {
+            font-size: 1.8rem;
+            margin: 0.5rem 0;
+            color: #218838;
+        }
+
+        .program-card p {
+            font-size: 1rem;
+            color: #555;
+            line-height: 1.5;
+            margin-bottom: 1rem;
+        }
+
+        .program-card .donate-btn {
+            background: linear-gradient(45deg, #a5229f, #cc084c);
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 25px;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: background 0.3s ease;
+            text-align: center;
+            width: 100%;
+            text-decoration: none;
+        }
+
+        .program-card .donate-btn:hover {
+            background-color: #1e7e34;
+        }
+
+        .cta-section {
+            background: black;
+            color: white;
+            padding: 2rem;
+            text-align: center;
+        }
+
+        .cta-section h2 {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        .cta-section p {
+            font-size: 1.2rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .cta-section button {
+            padding: 10px 20px;
+            background: #28a745;
+            color: white;
+            border: none;
+            border-radius: 25px;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: background 0.3s ease;
+        }
+
+        .cta-section button:hover {
+            background: #1e7e34;
+        }
+
+        footer {
+            background: #f8f9fa;
+            text-align: center;
+            padding: 1rem;
+            font-size: 0.9rem;
+            color: #888;
+        }
+   
