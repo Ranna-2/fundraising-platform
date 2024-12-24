@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Donate - Crowdfunding Platform</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    
+   
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet"/>
+</head>
+<body>
+        <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container">
+            <!--Logo Image -->
+            <a class="navbar-brand" href="#"><img src="logo.jpg"  style="height: 20px;"></a>
+            <!-- Centered Logo -->
+          <h1 class="text-2xl font-extrabold text-gray-800 animate-bounce">
+
+            <a href="./HomePage/HomePage.html" class="hover:text-blue-600 transition duration-200">
+              <span class="bg-gradient-to-r from-blue-500 to-green-500 text-transparent bg-clip-text">
+                KindledHope
+              </span>
+            </a>
+          </h1>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto align-items-center">
+                    <li class="nav-item">
+                        <a class="nav-link" href="./HomePage/HomePage.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="./funding/index.html">Campaigns</a>
+                    </li>
+                   
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="moreDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            More
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="moreDropdown">
+                            <li><a class="dropdown-item" href="#">About Us</a></li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="./HomePage/Homepage.html#how-it-works">How it Works</a>
+                            </li>
+                            <li><a class="dropdown-item" href="./HelpCenter/index.html">Help Center</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link btn btn-primary text-white" href="./Login/login.php">Donate Now</a>
+                    </li>
+                    &nbsp;
+                    <li class="nav-item">
+                        <a class="nav-link btn btn-outline-primary" href="./Signup/signup.php">Fundraise</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link " href="../admindashboard/dashboard.html">Admin</a>
+                  </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <!-- Campaign Section -->
+    <div class="container mt-5" id="campaign-container">
+        <h2 id="campaign-title"></h2>
+        <p id="campaign-description"></p>
+        <img id="campaign-image" class="img-fluid rounded" alt="Campaign Image">
+    </div>
+
+    <!-- Donation Amount Section -->
+        <div class="container my-3 p-3 bg-white rounded shadow container-section">
+          <h5 class="text-2xl font-bold mb-2">Choose Donation Amount</h5>
+          <div class="d-flex flex-wrap ">
+              <div class="donation-card">
+                  <p>$10</p>
+              </div>
+              <div class="donation-card">
+                  <p>$20</p>
+              </div>
+              <div class="donation-card">
+                  <p>$50</p>
+              </div>
+              <div class="donation-card">
+                  <p>$100</p>
+              </div>
+          </div>
+        <div id="donation-options" class="d-flex flex-wrap"></div>
+        <div class="mb-4">
+            <label class="form-label" for="custom-amount">Or Enter Custom Amount</label>
+            <input class="form-control" id="custom-amount" placeholder="Enter amount" type="number"/>
+        </div>
+    </div>
+
+    <!-- Payment Method Section -->
+    <div class="container my-2 p-4 bg-white rounded shadow">
+        <h5 class="text-2xl font-bold mb-4">Select Payment Method</h5>
+        <div id="payment-methods" class="d-flex justify-content-between"></div>
+    </div>
+
+    <!-- Anonymous Donation Option -->
+    <div class="container mt-3">
+        <label for="anonymous-donation" class="form-label">
+            <input type="checkbox" id="anonymous-donation"> Donate Anonymously
+        </label>
+    </div>
+
+    <!-- Bank Details Section -->
+    <div class="container mt-4">
+        <h4>Bank Details</h4>
+        <p>You can also donate directly through a bank deposit. Please use the following account details:</p>
+      
+        <p><strong>Bank Name:</strong> <span id="bank-name"></span></p>
+        <p><strong>Account Number:</strong> <span id="account-number"></span></p>
+        <p><strong>Account Name:</strong> <span id="account-name"></span></p>
+        <p><strong>SWIFT Code:</strong> <span id="swift-code"></span></p>
+        
+    </div>
+
+    <!-- Support Section -->
+    <div class="container mt-5">
+        <h5>Words of Support</h5>
+        <textarea class="form-control" rows="3" placeholder="Leave a message of support..."></textarea>
+    </div>
+
+    <!-- Share Buttons -->
+    <div class="container mt-3">
+      <h3>Share This Campaign</h3>
+      <button class="btn btn-primary"><i class="fab fa-facebook-f"></i> Share on Facebook</button>
+      <button class="btn btn-info"><i class="fab fa-twitter"></i> Share on Twitter</button>
+      <button class="btn btn-success"><i class="fab fa-whatsapp"></i> Share on WhatsApp</button>
+  </div>
+  <script src="share.js"></script>
+
+    <!-- Footer -->
+    <footer class="bg-light text-center text-lg-start mt-5">
+        <div class="text-center p-3">
+            © 2024 KindledHope.lk | <a href="#">Privacy Policy</a> | <a href="#">Terms of Service</a>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
