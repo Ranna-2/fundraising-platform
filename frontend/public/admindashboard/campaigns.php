@@ -39,64 +39,7 @@
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    <?php
-                                    // Database connection
-                                    $conn = new mysqli('localhost', 'root', '', 'fundarising_platform');
-
-                                    // Check connection
-                                    if ($conn->connect_error) {
-                                        die("Connection failed: " . $conn->connect_error);
-                                    }
-
-                                    // Query to fetch campaigns and related donation stats
-                                    $sql = "
-                                        SELECT 
-                                            c.campaign_id,
-                                            u.name AS user_name,
-                                            c.title,
-                                            c.goal_amount,
-                                            c.current_amount,
-                                            c.created_at AS start_date,
-                                            c.deadline AS end_date,
-                                            c.status,
-                                            COUNT(d.donation_id) AS donor_count
-                                        FROM 
-                                            campaign c
-                                        LEFT JOIN 
-                                            users u ON c.user_id = u.user_id
-                                        LEFT JOIN 
-                                            donation d ON c.campaign_id = d.campaign_id
-                                        GROUP BY 
-                                            c.campaign_id
-                                        ORDER BY 
-                                            c.created_at DESC
-                                    ";
-
-                                    $result = $conn->query($sql);
-
-                                    if ($result->num_rows > 0) {
-                                        while ($row = $result->fetch_assoc()) {
-                                            echo "<tr data-id='{$row['campaign_id']}'>
-                                                <td>{$row['campaign_id']}</td>
-                                                <td>{$row['user_name']}</td>
-                                                <td>{$row['title']}</td>
-                                                <td>{$row['goal_amount']}</td>
-                                                <td>{$row['current_amount']}</td>
-                                                <td>{$row['donor_count']}</td>
-                                                <td>{$row['start_date']}</td>
-                                                <td>{$row['end_date']}</td>
-                                                <td>{$row['status']}</td>
-                                                <td>
-                                                    <button class='btn btn-primary btn-sm edit-btn'>Edit</button>
-                                                </td>
-                                            </tr>";
-                                        }
-                                    } else {
-                                        echo "<tr><td colspan='10'>No campaigns found.</td></tr>";
-                                    }
-
-                                    $conn->close();
-                                    ?>
+                                    <!-- Add campaign data here -->
                                 </tbody>
                             </table>
                         </div>

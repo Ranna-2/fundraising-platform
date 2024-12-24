@@ -102,8 +102,7 @@
 }
 
 .hero-content .btn-primary:hover {
-    background-color: #1e7e34 !important;/* Darker shade for hover */
-}
+    background-color: #1e7e34 !important;
 
 .hero-content .btn-outline-primary {
     background-color: transparent;
@@ -146,7 +145,7 @@
 }
 
 .search-bar-container {
-    background-color: transparent; /* Make background transparent */
+    background-color: transparent;
     padding: 20px;
     border-radius: 8px;
     margin-top: 10px;
@@ -248,8 +247,8 @@ body {
 
 /* Testimonials */
 .testimonial-card {
-    width: 90%; /* Set card width smaller */
-    margin: 0 auto; /* Center the cards horizontally */
+    width: 90%; 
+    margin: 0 auto; 
     transition: transform 0.2s;
 }
 
@@ -258,8 +257,8 @@ body {
 }
 
 .card-img-top {
-    height: 400px; /* Limit image height */
-    object-fit: cover; /* Ensure image fits within the space */
+    height: 400px; 
+    object-fit: cover; 
 }
 
 .star {
