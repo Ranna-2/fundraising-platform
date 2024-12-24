@@ -346,28 +346,27 @@ body {
   padding: 10px 20px;
   font-size: 1rem;
   color: white;
-  text-decoration: none; /* Removes any underline */
-  background-color: #33b21d; /* Primary color */
+  text-decoration: none; 
+  background-color: #33b21d; 
   border: none;
   border-radius: 25px;
   cursor: pointer;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
   transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
-  margin-top: 10px; /* Adds space between description and button */
-  display: inline-block; /* Ensures proper spacing and alignment */
+  margin-top: 10px; 
+  display: inline-block; 
   text-align: center;
 }
 
 .resource-link:hover {
-  background-color: #277919; /* Darker shade on hover */
+  background-color: #277919; 
   transform: translateY(-2px);
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Enhanced shadow on hover */
-}
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); 
 
 .resource-link:active {
-  background-color: #d84315; /* Even darker shade for active state */
+  background-color: #d84315;
   transform: translateY(0);
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Normal shadow for active state */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); 
 }
 
 /* FAQ Section */
@@ -412,13 +411,12 @@ body {
   justify-content: space-between;
   align-items: center;
   transition: background 0.3s ease-in-out, border-left 0.3s ease-in-out;
-  border-left: 5px solid transparent; /* Default transparent */
+  border-left: 5px solid transparent; 
 }
 
 .faq-question:hover {
   background-color: gray;
-  border-left: 5px solid green; /* Green border on hover */
-}
+  border-left: 5px solid green; 
 
 .faq-icon {
   font-size: 20px;
@@ -433,7 +431,7 @@ body {
   font-size: 16px;
   color: #555;
   line-height: 1.6;
-  border-left: 5px solid green; /* Green border for expanded answer */
+  border-left: 5px solid green; 
 }
 
 /* Checkbox Styling */
@@ -442,15 +440,15 @@ body {
 }
 
 .faq-checkbox:checked + .faq-question + .faq-answer {
-  display: block; /* Show answer when checkbox is checked */
+  display: block; 
 }
 
 .faq-checkbox:checked + .faq-question {
-  border-left: 5px solid green; /* Green border for the question when expanded */
+  border-left: 5px solid green;
 }
 
 .faq-checkbox:checked + .faq-question .faq-icon {
-  transform: rotate(45deg); /* Rotate icon when expanded */
+  transform: rotate(45deg); 
 }
 
   }

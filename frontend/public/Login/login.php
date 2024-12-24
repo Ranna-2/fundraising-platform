@@ -9,7 +9,7 @@ if (session_status() == PHP_SESSION_NONE) {
 
 // Include database connection
 $host = 'localhost';
-$dbname = 'fundarising_platform';  // Ensure the correct database name
+$dbname = 'fundarising_platform';  
 $username = 'root';
 $password = '';
 

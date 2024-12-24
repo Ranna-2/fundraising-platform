@@ -38,7 +38,7 @@
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    <!-- Add campaign data here -->
+                                    <!-- campaign data here -->
                                 </tbody>
                             </table>
                         </div>

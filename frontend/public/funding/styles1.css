@@ -30,13 +30,13 @@
         }
 
         .sidenav a:hover {
-            background-color: #28a745; /* Green background on hover */
+            background-color: #28a745; 
             color: white; 
         }
 
         /* Content Wrapper */
         .content {
-            margin-left: 260px; /* Space for the sidebar */
+            margin-left: 260px; 
             padding: 20px;
         }
 
