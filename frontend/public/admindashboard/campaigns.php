@@ -39,13 +39,72 @@
                                     </tr>
                                 </thead>
                                 <tbody>
+                                    <!-- Original dynamic code (commented out for hardcoding) -->
                                     <!-- Add campaign data here -->
+                                    <!-- Example: 
+                                    <tr>
+                                        <td>1</td>
+                                        <td>John Doe</td>
+                                        <td>Help Education</td>
+                                        <td>$5000</td>
+                                        <td>$3000</td>
+                                        <td>50</td>
+                                        <td>2024-01-01</td>
+                                        <td>2024-12-31</td>
+                                        <td>Active</td>
+                                        <td>
+                                            <button class="btn btn-sm btn-primary edit-btn">Edit</button>
+                                        </td>
+                                    </tr>
+                                    -->
+                                    <!-- Hardcoded data -->
+                                    <tr>
+                                        <td>1</td>
+                                        <td>John Doe</td>
+                                        <td>Help Education</td>
+                                        <td>$5000</td>
+                                        <td>$3000</td>
+                                        <td>50</td>
+                                        <td>2024-01-01</td>
+                                        <td>2024-12-31</td>
+                                        <td>Active</td>
+                                        <td>
+                                            <button class="btn btn-sm btn-primary edit-btn">Edit</button>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>2</td>
+                                        <td>Jane Smith</td>
+                                        <td>Medical Aid</td>
+                                        <td>$10000</td>
+                                        <td>$8000</td>
+                                        <td>75</td>
+                                        <td>2024-02-15</td>
+                                        <td>2024-11-15</td>
+                                        <td>Completed</td>
+                                        <td>
+                                            <button class="btn btn-sm btn-primary edit-btn">Edit</button>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>3</td>
+                                        <td>Bob Lee</td>
+                                        <td>Disaster Relief</td>
+                                        <td>$20000</td>
+                                        <td>$15000</td>
+                                        <td>120</td>
+                                        <td>2024-03-01</td>
+                                        <td>2024-10-31</td>
+                                        <td>Active</td>
+                                        <td>
+                                            <button class="btn btn-sm btn-primary edit-btn">Edit</button>
+                                        </td>
+                                    </tr>
                                 </tbody>
                             </table>
                         </div>
                     </div>
-
-                    <!-- Edit Campaign Form -->
+                     <!-- Edit Campaign Form -->
                     <div id="edit-campaign-form" class="mt-4" style="display: none;">
                         <h4>Edit Campaign</h4>
                         <form action="update_campaign.php" method="POST">
@@ -85,7 +144,7 @@
         $(document).ready(function () {
             $('.edit-btn').on('click', function () {
                 const row = $(this).closest('tr');
-                const id = row.data('id');
+                const id = row.find('td:eq(0)').text();
                 const title = row.find('td:eq(2)').text();
                 const goal = row.find('td:eq(3)').text();
                 const deadline = row.find('td:eq(7)').text();

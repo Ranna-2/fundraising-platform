@@ -1,17 +1,6 @@
 <?php
 // Database connection
-$host = 'localhost'; 
-$dbname = 'Fundarising_platform'; 
-$username = 'root'; 
-$password = ''; 
-
-// Create connection
-$conn = new mysqli($host, $username, $password, $dbname);
-
-// Check connection
-if ($conn->connect_error) {
-    die("Connection failed: " . $conn->connect_error);
-}
+.
 
 // Check if form is submitted
 if (isset($_POST['submit'])) {
