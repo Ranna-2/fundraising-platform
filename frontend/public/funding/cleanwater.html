@@ -9,20 +9,53 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
     <link rel="stylesheet" href="styles1.css">
     <style>
-
         header {
             text-align: center;
             padding: 2rem;
-            background: linear-gradient(45deg, #01383e,#6be9cf);
+            background: linear-gradient(45deg, #01383e, #6be9cf);
             color: white;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
         }
 
+        /* Donation Tracker Progress Bar */
+        .progress-container {
+            width: 80%; /* Reduced width */
+            height: 8px;
+            background-color: #f0f0f0;
+            border-radius: 5px;
+            margin-bottom: 10px;
+            margin-left: auto; /* Center the progress bar */
+            margin-right: auto; /* Center the progress bar */
+        }
+
+        .progress-bar {
+            height: 100%;
+            background-color: #38f05f;
+            width: 60%; /* Adjust as needed */
+            border-radius: 5px;
+        }
+
+        /* Donate Button */
+        .donate-btn {
+            display: inline-block;
+            background-color: #38f05f;
+            color: white;
+            padding: 8px 15px; /* Reduced padding */
+            border-radius: 5px;
+            text-decoration: none;
+            margin-top: 10px;
+            font-size: 14px; /* Reduced font size */
+            width: auto; /* Let the button width adjust based on content */
+            max-width: 200px; /* Set a max width to avoid it getting too long */
+            text-align: center;
+            margin-left: auto;
+            margin-right: auto;
+        }
     </style>
 </head>
 
 <body>
-     <!-- Side Navigation Bar -->
+    <!-- Side Navigation Bar -->
     <div class="sidenav">
         <h2 style="text-align: center; color: #38f05f;"><b>Campaigns</b></h2>
         <a href="index.html" class="filter-btn" data-filter="all"><i class="fas fa-th-list"></i> All</a>
@@ -39,75 +72,93 @@
 
     <!-- Header -->
     <div class="content">
-    <header>
-        <h1>Clean Water Programs</h1>
-        <p>Join us in providing clean and safe water to communities in need around the world.</p>
-    </header>
+        <header>
+            <h1>Clean Water Programs</h1>
+            <p>Join us in providing clean and safe water to communities in need around the world.</p>
+        </header>
 
-    <!-- Programs Section -->
-    <div class="programs-container">
-        <!-- Program Cards -->
-        <div class="program-card">
-            <img src="clean1.jpg" alt="Program 1">
-            <div class="card-content">
-                <h3>Well Construction</h3>
-                <p>Building wells in rural areas to provide access to clean drinking water for communities.</p>
-                <a href="../donation.html" class="donate-btn" >Donate Now</a>
+        <!-- Programs Section -->
+        <div class="programs-container">
+            <!-- Program Cards -->
+            <div class="program-card">
+                <img src="clean1.jpg" alt="Program 1">
+                <div class="card-content">
+                    <h3>Well Construction</h3>
+                    <p>Building wells in rural areas to provide access to clean drinking water for communities.</p>
+                    <div class="progress-container">
+                        <div class="progress-bar" style="width: 60%;"></div>
+                    </div>
+                    <a href="../donation.html" class="donate-btn">Donate Now</a>
+                </div>
+            </div>
+            <div class="program-card">
+                <img src="clean2.jpg" alt="Program 2">
+                <div class="card-content">
+                    <h3>Water Filtration Systems</h3>
+                    <p>Installing water filtration systems to ensure access to clean, safe water in underserved areas.</p>
+                    <div class="progress-container">
+                        <div class="progress-bar" style="width: 75%;"></div>
+                    </div>
+                    <a href="../donation.html" class="donate-btn">Donate Now</a>
+                </div>
+            </div>
+            <div class="program-card">
+                <img src="clean3.jpg" alt="Program 3">
+                <div class="card-content">
+                    <h3>Water Access for Schools</h3>
+                    <p>Providing clean water facilities to schools, ensuring children have access to safe drinking water.</p>
+                    <div class="progress-container">
+                        <div class="progress-bar" style="width: 50%;"></div>
+                    </div>
+                    <a href="../donation.html" class="donate-btn">Donate Now</a>
+                </div>
+            </div>
+            <div class="program-card">
+                <img src="clean4.jpg" alt="Program 4">
+                <div class="card-content">
+                    <h3>Rainwater Harvesting</h3>
+                    <p>Setting up rainwater harvesting systems to provide clean water in areas with limited resources.</p>
+                    <div class="progress-container">
+                        <div class="progress-bar" style="width: 80%;"></div>
+                    </div>
+                    <a href="../donation.html" class="donate-btn">Donate Now</a>
+                </div>
+            </div>
+            <div class="program-card">
+                <img src="clean5.jpg" alt="Program 5">
+                <div class="card-content">
+                    <h3>Emergency Water Relief</h3>
+                    <p>Delivering clean water to communities affected by natural disasters and crises.</p>
+                    <div class="progress-container">
+                        <div class="progress-bar" style="width: 40%;"></div>
+                    </div>
+                    <a href="../donation.html" class="donate-btn">Donate Now</a>
+                </div>
+            </div>
+            <div class="program-card">
+                <img src="clean6.jpg" alt="Program 6">
+                <div class="card-content">
+                    <h3>Water Education</h3>
+                    <p>Educating communities about the importance of clean water and sanitation practices for health and hygiene.</p>
+                    <div class="progress-container">
+                        <div class="progress-bar" style="width: 65%;"></div>
+                    </div>
+                    <a href="../donation.html" class="donate-btn">Donate Now</a>
+                </div>
             </div>
         </div>
-        <div class="program-card">
-            <img src="clean2.jpg" alt="Program 2">
-            <div class="card-content">
-                <h3>Water Filtration Systems</h3>
-                <p>Installing water filtration systems to ensure access to clean, safe water in underserved areas.</p>
-                <a href="../donation.html" class="donate-btn" >Donate Now</a>
-            </div>
-        </div>
-        <div class="program-card">
-            <img src="clean3.jpg" alt="Program 3">
-            <div class="card-content">
-                <h3>Water Access for Schools</h3>
-                <p>Providing clean water facilities to schools, ensuring children have access to safe drinking water.</p>
-                <a href="../donation.html" class="donate-btn" >Donate Now</a>
-            </div>
-        </div>
-        <div class="program-card">
-            <img src="clean4.jpg" alt="Program 4">
-            <div class="card-content">
-                <h3>Rainwater Harvesting</h3>
-                <p>Setting up rainwater harvesting systems to provide clean water in areas with limited resources.</p>
-                <a href="../donation.html" class="donate-btn" >Donate Now</a>
-            </div>
-        </div>
-        <div class="program-card">
-            <img src="clean5.jpg" alt="Program 5">
-            <div class="card-content">
-                <h3>Emergency Water Relief</h3>
-                <p>Delivering clean water to communities affected by natural disasters and crises.</p>
-                <a href="../donation.html" class="donate-btn" >Donate Now</a>
-            </div>
-        </div>
-        <div class="program-card">
-            <img src="clean6.jpg" alt="Program 6">
-            <div class="card-content">
-                <h3>Water Education</h3>
-                <p>Educating communities about the importance of clean water and sanitation practices for health and hygiene.</p>
-                <a href="../donation.html" class="donate-btn" >Donate Now</a>
-            </div>
-        </div>
-    </div>
 
-    <!-- Call-to-Action Section -->
-    <div class="cta-section">
-        <h2>Help Provide Clean Water</h2>
-        <p>Be a part of the solution and help us ensure access to clean water for everyone, everywhere.</p>
-        <button>Start a Campaign</button>
-    </div>
+        <!-- Call-to-Action Section -->
+        <div class="cta-section">
+            <h2>Help Provide Clean Water</h2>
+            <p>Be a part of the solution and help us ensure access to clean water for everyone, everywhere.</p>
+            <button>Start a Campaign</button>
+        </div>
 
-    <!-- Footer -->
-    <footer>
-        &copy; 2024 KindledHope. All Rights Reserved.
-    </footer>
+        <!-- Footer -->
+        <footer>
+            &copy; 2024 KindledHope. All Rights Reserved.
+        </footer>
     </div>
 </body>
 
