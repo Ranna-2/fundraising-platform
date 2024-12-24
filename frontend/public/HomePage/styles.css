@@ -103,6 +103,7 @@
 
 .hero-content .btn-primary:hover {
     background-color: #1e7e34 !important;
+}
 
 .hero-content .btn-outline-primary {
     background-color: transparent;
@@ -145,7 +146,7 @@
 }
 
 .search-bar-container {
-    background-color: transparent;
+    background-color: transparent; 
     padding: 20px;
     border-radius: 8px;
     margin-top: 10px;
