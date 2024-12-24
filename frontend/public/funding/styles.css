@@ -46,7 +46,7 @@ body {
 
 /* Navbar Styles */
 .navbar .nav-link {
-    color: #555;
+    color: #000000;
     font-weight: 500;
 }
 
@@ -54,22 +54,32 @@ body {
     color: #28a745;
 }
 
+.navbar .nav-item {
+    margin-right: 10px; 
+}
 
 
-.navbar .btn.btn-custom-primary {
-    background-color: #28a745;
+
+
+.navbar .btn.btn-primary {
+    background-color: #28a745 !important; 
     border: none;
     color: white;
 }
 
-.navbar .btn.btn-outline-custom-primary {
+.navbar .btn.btn-primary:hover {
+    background-color: #1e7e34 !important;
+    color: white;
+}
+
+.navbar .btn.btn-outline-primary {
     background-color: transparent;
-    border-color: #28a745;
+    border-color: #28a745 !important;
     color: #28a745;
 }
 
-.navbar .btn.btn-outline-custom-primary:hover {
-    background-color: #28a745;
+.navbar .btn.btn-outline-primary:hover {
+    background-color: #1e7e34;
     color: white;
 }
 
