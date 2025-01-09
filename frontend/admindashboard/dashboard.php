@@ -1,3 +1,25 @@
+<?php
+// Database connection settings
+$host = 'localhost';
+$dbname = 'fundarising_platform';
+$username = 'root';
+$password = '';
+
+// Create connection
+$conn = new mysqli($host, $username, $password, $dbname);
+
+// Check connection
+if ($conn->connect_error) {
+    die("Connection failed: " . $conn->connect_error);
+}
+
+// Fetch data for dashboard cards
+$totalUsers = $conn->query("SELECT COUNT(*) as count FROM users")->fetch_assoc()['count'];
+$totalDonations = $conn->query("SELECT COUNT(*) as count FROM donations")->fetch_assoc()['count'];
+$totalFunds = $conn->query("SELECT SUM(amount) as total FROM donations")->fetch_assoc()['total'];
+$totalCampaigns = $conn->query("SELECT COUNT(*) as count FROM campaigns")->fetch_assoc()['count'];
+$totalDonated = $conn->query("SELECT SUM(amount) as total FROM donations")->fetch_assoc()['total'];
+?>
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -44,12 +66,12 @@
 
         <ul class="sidebar-list">
           <li class="sidebar-list-item">
-            <a href="dashboard.html">
+            <a href="dashboard.php">
               <span class="material-icons-outlined">dashboard</span> Dashboard
             </a>
           </li>
           <li class="sidebar-list-item">
-            <a href="user_management.html">
+            <a href="user_management.php">
               <span class="material-icons-outlined">people</span> User Management
             </a>
           </li>
@@ -94,13 +116,12 @@
         </div>
 
         <div class="main-cards">
-
           <div class="card">
             <div class="card-inner">
               <p class="text-primary">NUMBER OF USERS</p>
               <span class="material-icons-outlined text-blue">people</span>
             </div>
-            <span class="text-primary font-weight-bold">11</span>
+            <span class="text-primary font-weight-bold"><?php echo $totalUsers; ?></span>
           </div>
 
           <div class="card">
@@ -108,7 +129,7 @@
               <p class="text-primary">NUMBER OF DONATIONS</p>
               <span class="material-icons-outlined text-orange">payments</span>
             </div>
-            <span class="text-primary font-weight-bold">15</span>
+            <span class="text-primary font-weight-bold"><?php echo $totalDonations; ?></span>
           </div>
 
           <div class="card">
@@ -116,7 +137,7 @@
               <p class="text-primary">FUNDS RAISED</p>
               <span class="material-icons-outlined text-green">attach_money</span>
             </div>
-            <span class="text-primary font-weight-bold">$90</span>
+            <span class="text-primary font-weight-bold">$<?php echo number_format($totalFunds, 2); ?></span>
           </div>
 
           <div class="card">
@@ -124,7 +145,7 @@
               <p class="text-primary">CAMPAIGNS</p>
               <span class="material-icons-outlined text-red">campaign</span>
             </div>
-            <span class="text-primary font-weight-bold">25</span>
+            <span class="text-primary font-weight-bold"><?php echo $totalCampaigns; ?></span>
           </div>
 
           <div class="card">
@@ -132,13 +153,11 @@
               <p class="text-primary">AMOUNT DONATED SO FAR</p>
               <span class="material-icons-outlined text-purple">money</span>
             </div>
-            <span class="text-primary font-weight-bold">$150</span>
+            <span class="text-primary font-weight-bold">$<?php echo number_format($totalDonated, 2); ?></span>
           </div>
-
         </div>
 
         <div class="charts">
-
           <div class="charts-card">
             <p class="chart-title">Campaign Performance</p>
             <div id="bar-chart"></div>
@@ -148,7 +167,6 @@
             <p class="chart-title">Donation Trends</p>
             <div id="area-chart"></div>
           </div>
-
         </div>
       </main>
       <!-- End Main -->
@@ -162,3 +180,4 @@
     <script src="js/scripts.js"></script>
   </body>
 </html>
+<?php $conn->close(); ?>
