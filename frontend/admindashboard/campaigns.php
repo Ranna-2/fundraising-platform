@@ -23,7 +23,7 @@
                     </div>
                     <div class="box box-primary">
                         <div class="box-body">
-                            <table width="100%" class="table table-hover" id="dataTables-example">
+                            <table class="table table-hover" id="dataTables-example">
                                 <thead>
                                     <tr>
                                         <th>Campaign ID</th>
@@ -39,75 +39,61 @@
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    <!-- Original dynamic code (commented out for hardcoding) -->
-                                    <!-- Add campaign data here -->
-                                    <!-- Example: 
-                                    <tr>
-                                        <td>1</td>
-                                        <td>John Doe</td>
-                                        <td>Help Education</td>
-                                        <td>$5000</td>
-                                        <td>$3000</td>
-                                        <td>50</td>
-                                        <td>2024-01-01</td>
-                                        <td>2024-12-31</td>
-                                        <td>Active</td>
-                                        <td>
-                                            <button class="btn btn-sm btn-primary edit-btn">Edit</button>
-                                        </td>
-                                    </tr>
-                                    -->
-                                    <!-- Hardcoded data -->
-                                    <tr>
-                                        <td>1</td>
-                                        <td>John Doe</td>
-                                        <td>Help Education</td>
-                                        <td>$5000</td>
-                                        <td>$3000</td>
-                                        <td>50</td>
-                                        <td>2024-01-01</td>
-                                        <td>2024-12-31</td>
-                                        <td>Active</td>
-                                        <td>
-                                            <button class="btn btn-sm btn-primary edit-btn">Edit</button>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>2</td>
-                                        <td>Jane Smith</td>
-                                        <td>Medical Aid</td>
-                                        <td>$10000</td>
-                                        <td>$8000</td>
-                                        <td>75</td>
-                                        <td>2024-02-15</td>
-                                        <td>2024-11-15</td>
-                                        <td>Completed</td>
-                                        <td>
-                                            <button class="btn btn-sm btn-primary edit-btn">Edit</button>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>3</td>
-                                        <td>Bob Lee</td>
-                                        <td>Disaster Relief</td>
-                                        <td>$20000</td>
-                                        <td>$15000</td>
-                                        <td>120</td>
-                                        <td>2024-03-01</td>
-                                        <td>2024-10-31</td>
-                                        <td>Active</td>
-                                        <td>
-                                            <button class="btn btn-sm btn-primary edit-btn">Edit</button>
-                                        </td>
-                                    </tr>
+                                    <?php
+                                    // Database connection
+                                    $conn = new mysqli("localhost", "root", "", "fundarising_platform");
+                                    if ($conn->connect_error) {
+                                        die("Connection failed: " . $conn->connect_error);
+                                    }
+
+                                    $sql = "
+                                        SELECT 
+                                            campaigns.campaign_id, 
+                                            users.first_name AS user, 
+                                            campaigns.title, 
+                                            campaigns.goal_amount, 
+                                            campaigns.current_amount, 
+                                            (SELECT COUNT(*) FROM donations WHERE donations.campaign_id = campaigns.campaign_id) AS donors, 
+                                            campaigns.created_at AS start_date, 
+                                            campaigns.deadline, 
+                                            campaigns.status 
+                                        FROM campaigns 
+                                        JOIN users ON campaigns.user_id = users.user_id";
+
+                                    $result = $conn->query($sql);
+
+                                    if ($result->num_rows > 0) {
+                                        while ($row = $result->fetch_assoc()) {
+                                            echo "<tr data-id='" . $row['campaign_id'] . "'>";
+                                            echo "<td>" . htmlspecialchars($row['campaign_id']) . "</td>";
+                                            echo "<td>" . htmlspecialchars($row['user']) . "</td>";
+                                            echo "<td>" . htmlspecialchars($row['title']) . "</td>";
+                                            echo "<td>$" . number_format($row['goal_amount'], 2) . "</td>";
+                                            echo "<td>$" . number_format($row['current_amount'], 2) . "</td>";
+                                            echo "<td>" . $row['donors'] . "</td>";
+                                            echo "<td>" . $row['start_date'] . "</td>";
+                                            echo "<td>" . $row['deadline'] . "</td>";
+                                            echo "<td>" . ucfirst($row['status']) . "</td>";
+                                            echo "<td>
+                                                    <button class='btn btn-sm btn-primary edit-btn'>Edit</button>
+                                                  </td>";
+                                            echo "</tr>";
+                                        }
+                                    } else {
+                                        echo "<tr><td colspan='10'>No campaigns found.</td></tr>";
+                                    }
+
+                                    $conn->close();
+                                    ?>
                                 </tbody>
                             </table>
                         </div>
                     </div>
-                     <!-- Edit Campaign Form -->
+
+                    <!-- Edit Campaign Form -->
                     <div id="edit-campaign-form" class="mt-4" style="display: none;">
                         <h4>Edit Campaign</h4>
-                        <form action="update_campaign.php" method="POST">
+                        <form id="ajax-edit-form">
                             <input type="hidden" name="campaign_id" id="campaign_id">
                             <div class="form-group">
                                 <label for="title">Title</label>
@@ -136,17 +122,20 @@
             </div>
         </div>
     </div>
+
     <script src="assets/vendor/jquery/jquery.min.js"></script>
     <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
     <script src="assets/vendor/datatables/datatables.min.js"></script>
-    <script src="assets/js/initiate-datatables.js"></script>
     <script>
         $(document).ready(function () {
+            $('#dataTables-example').DataTable();
+
+            // Handle Edit button click
             $('.edit-btn').on('click', function () {
                 const row = $(this).closest('tr');
-                const id = row.find('td:eq(0)').text();
+                const id = row.data('id');
                 const title = row.find('td:eq(2)').text();
-                const goal = row.find('td:eq(3)').text();
+                const goal = row.find('td:eq(3)').text().replace('$', '').replace(',', '');
                 const deadline = row.find('td:eq(7)').text();
                 const status = row.find('td:eq(8)').text();
 
@@ -154,11 +143,86 @@
                 $('#title').val(title);
                 $('#goal_amount').val(goal);
                 $('#deadline').val(deadline);
-                $('#status').val(status);
+                $('#status').val(status.toLowerCase());
 
                 $('#edit-campaign-form').show();
+                $('html, body').animate({ scrollTop: $('#edit-campaign-form').offset().top }, 'slow');
+            });
+
+            // Handle form submission with AJAX
+            $('#ajax-edit-form').on('submit', function (e) {
+                e.preventDefault();
+
+                const formData = $(this).serialize();
+
+                $.ajax({
+                    url: '', // Same file
+                    method: 'POST',
+                    data: formData + '&ajax=1', // Add flag for AJAX requests
+                    success: function (response) {
+                        if (response.success) {
+                            const row = $('tr[data-id="' + response.data.campaign_id + '"]');
+                            row.find('td:eq(2)').text(response.data.title);
+                            row.find('td:eq(3)').text('$' + parseFloat(response.data.goal_amount).toFixed(2));
+                            row.find('td:eq(7)').text(response.data.deadline);
+                            row.find('td:eq(8)').text(response.data.status);
+
+                            alert('Campaign updated successfully!');
+                            $('#edit-campaign-form').hide();
+                        } else {
+                            alert('Failed to update campaign: ' + response.message);
+                        }
+                    },
+                    error: function () {
+                        alert('An error occurred while updating the campaign.');
+                    }
+                });
             });
         });
     </script>
 </body>
 </html>
+
+<?php
+// Handle AJAX request
+if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['ajax'])) {
+    header('Content-Type: application/json');
+    $conn = new mysqli("localhost", "root", "", "fundarising_platform");
+
+    if ($conn->connect_error) {
+        echo json_encode(['success' => false, 'message' => 'Database connection failed.']);
+        exit();
+    }
+
+    $campaign_id = $_POST['campaign_id'];
+    $title = $_POST['title'];
+    $goal_amount = $_POST['goal_amount'];
+    $deadline = $_POST['deadline'];
+    $status = $_POST['status'];
+
+    $sql = "UPDATE campaigns 
+            SET title = ?, goal_amount = ?, deadline = ?, status = ? 
+            WHERE campaign_id = ?";
+    $stmt = $conn->prepare($sql);
+    $stmt->bind_param("sdssi", $title, $goal_amount, $deadline, $status, $campaign_id);
+
+    if ($stmt->execute()) {
+        echo json_encode([
+            'success' => true,
+            'data' => [
+                'campaign_id' => $campaign_id,
+                'title' => $title,
+                'goal_amount' => $goal_amount,
+                'deadline' => $deadline,
+                'status' => ucfirst($status)
+            ]
+        ]);
+    } else {
+        echo json_encode(['success' => false, 'message' => 'Failed to update campaign.']);
+    }
+
+    $stmt->close();
+    $conn->close();
+    exit();
+}
+?>
