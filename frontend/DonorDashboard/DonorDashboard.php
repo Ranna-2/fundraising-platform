@@ -1,3 +1,34 @@
+<?php
+// Database connection
+$conn = new mysqli("localhost", "root", "", "fundarising_platform");
+if ($conn->connect_error) {
+    die("Connection failed: " . $conn->connect_error);
+}
+
+// Fetch donor campaigns
+$donorId = 1; // Replace with the actual donor ID from session or login
+$campaignsQuery = "
+    SELECT c.title, c.description, c.goal_amount, c.current_amount, 
+           (c.current_amount / c.goal_amount) * 100 AS progress
+    FROM campaigns c
+    JOIN donations d ON c.campaign_id = d.campaign_id
+    WHERE d.donation_id = ?";
+$campaignsStmt = $conn->prepare($campaignsQuery);
+$campaignsStmt->bind_param("i", $donorId);
+$campaignsStmt->execute();
+$campaignsResult = $campaignsStmt->get_result();
+
+// Fetch donation history
+$donationsQuery = "
+    SELECT d.donation_date, c.title AS campaign, d.amount
+    FROM donations d
+    JOIN campaigns c ON d.campaign_id = c.campaign_id
+    WHERE d.donation_id = ?";
+$donationsStmt = $conn->prepare($donationsQuery);
+$donationsStmt->bind_param("i", $donorId);
+$donationsStmt->execute();
+$donationsResult = $donationsStmt->get_result();
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -61,52 +92,30 @@
 </nav>
 
     <div class="container mt-4">
-        <h2 class="text-3xl font-bold text-gray-800 mb-4" style="text-align: center;">Welcome, Donor!</h2>
+        <h2 class="text-3xl font-bold text-gray-800 mb-4 text-center">Welcome, Donor!</h2>
         <div class="row">
             <div class="col-md-8">
                 <h4>Your Campaigns</h4>
-                <div class="card mb-3">
-                    <div class="card-body">
-                        <h5 class="card-title">Helping Hands</h5>
-                        <p class="card-text">Helping Hands. You can see the progress and make donations.</p>
-                        <div class="progress mb-2">
-                            <div class="progress-bar" role="progressbar" style="width: 75%;" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"></div>
+                <?php if ($campaignsResult->num_rows > 0): ?>
+                    <?php while ($campaign = $campaignsResult->fetch_assoc()): ?>
+                        <div class="card mb-3">
+                            <div class="card-body">
+                                <h5 class="card-title"><?php echo htmlspecialchars($campaign['title']); ?></h5>
+                                <p class="card-text"><?php echo htmlspecialchars($campaign['description']); ?></p>
+                                <div class="progress mb-2">
+                                    <div class="progress-bar" role="progressbar" 
+                                         style="width: <?php echo round($campaign['progress'], 2); ?>%;" 
+                                         aria-valuenow="<?php echo round($campaign['progress'], 2); ?>" 
+                                         aria-valuemin="0" aria-valuemax="100">
+                                    </div>
+                                </div>
+                                <a href="#" class="btn btn-primary">View Campaign</a>
+                            </div>
                         </div>
-                        <a href="#" class="btn btn-primary">View Campaign</a>
-                    </div>
-                </div>
-
-                <div class="card mb-3">
-                    <div class="card-body">
-                        <h5 class="card-title">Save the Rainforest</h5>
-                        <p class="card-text">Save the Rainforest. You can see the progress and make donations.</p>
-                        <div class="progress mb-2">
-                            <div class="progress-bar bg-success" role="progressbar" style="width: 50%;" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
-                        </div>
-                        <a href="#" class="btn btn-primary">View Campaign</a>
-                    </div>
-                </div>
-
-                <div class="card mb-3">
-                    <div class="card-body">
-                        <h5 class="card-title">Help Homeless Families</h5>
-                        <p class="card-text">Help Homeless Families. You can see the progress and make donations.</p>
-                        <div class="progress mb-2">
-                            <div class="progress-bar bg-warning" role="progressbar" style="width: 30%;" aria-valuenow="30" aria-valuemin="0" aria-valuemax="100"></div>
-                        </div>
-                        <a href="#" class="btn btn-primary">View Campaign</a>
-                    </div>
-                </div>
-                <div class="card mb-3">
-                    <div class="card-body">
-                        <h5 class="card-title">Support Local Schools</h5>
-                        <p class="card-text">Support Local Schools. You can see the progress and make donations.</p>
-                        <div class="progress mb-2">
-                            <div class="progress-bar bg-warning" role="progressbar" style="width: 30%;" aria-valuenow="30" aria-valuemin="0" aria-valuemax="100"></div>
-                        </div>
-                        <a href="#" class="btn btn-primary">View Campaign</a>
-                    </div>
-                </div>
+                    <?php endwhile; ?>
+                <?php else: ?>
+                    <p>You have not donated to any campaigns yet.</p>
+                <?php endif; ?>
             </div>
             <div class="col-md-4">
                 <h4>Your Donation History</h4>
@@ -118,13 +127,20 @@
                             <th>Amount</th>
                         </tr>
                     </thead>
-                    <tbody id="donationHistory">
-                        <tr>
-                            <td>2024-12-22</td>
-                            <td>Helping Hands</td>
-                            <td>$12</td>
-                        </tr>
-                        <!-- More donation history can be added here -->
+                    <tbody>
+                        <?php if ($donationsResult->num_rows > 0): ?>
+                            <?php while ($donation = $donationsResult->fetch_assoc()): ?>
+                                <tr>
+                                    <td><?php echo htmlspecialchars($donation['date']); ?></td>
+                                    <td><?php echo htmlspecialchars($donation['campaign']); ?></td>
+                                    <td>$<?php echo number_format($donation['amount'], 2); ?></td>
+                                </tr>
+                            <?php endwhile; ?>
+                        <?php else: ?>
+                            <tr>
+                                <td colspan="3">No donations found.</td>
+                            </tr>
+                        <?php endif; ?>
                     </tbody>
                 </table>
             </div>
@@ -133,6 +149,8 @@
 
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="script.js"></script>
 </body>
 </html>
+<?php
+$conn->close();
+?>
