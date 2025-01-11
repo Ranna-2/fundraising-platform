@@ -99,41 +99,34 @@ $result = $conn->query($sql);
             padding: 15px;
             text-align: center;
         }
-        /* Donation Tracker Progress Bar */
-.progress-container {
-    width: 80%; /* Reduced width */
-    height: 8px;
-    background-color: #f0f0f0;
-    border-radius: 5px;
-    margin-bottom: 10px;
-    margin-left: auto; /* Center the progress bar */
-    margin-right: auto; /* Center the progress bar */
-}
 
-.progress-bar {
-    height: 100%;
-    background-color: #38f05f;
-    width: 60%; /* Adjust as needed */
-    border-radius: 5px;
-}
+        .progress-container {
+            width: 80%;
+            height: 8px;
+            background-color: #f0f0f0;
+            border-radius: 5px;
+            margin-bottom: 10px;
+            margin-left: auto;
+            margin-right: auto;
+        }
 
-/* Donate Button */
-.donate-btn {
-    display: inline-block;
-    background-color: #38f05f;
-    color: white;
-    padding: 8px 15px; /* Reduced padding */
-    border-radius: 5px;
-    text-decoration: none;
-    margin-top: 10px;
-    font-size: 14px; /* Reduced font size */
-    width: auto; /* Let the button width adjust based on content */
-    max-width: 200px; /* Set a max width to avoid it getting too long */
-    text-align: center;
-    margin-left: auto;
-    margin-right: auto;
-}
+        .progress-bar {
+            height: 100%;
+            background-color: #38f05f;
+            border-radius: 5px;
+        }
 
+        .donate-btn {
+            display: inline-block;
+            background-color: #38f05f;
+            color: white;
+            padding: 8px 15px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-size: 14px;
+            text-align: center;
+            margin: 10px auto 0;
+        }
     </style>
 </head>
 <body>
@@ -161,10 +154,14 @@ $result = $conn->query($sql);
                     // Calculate progress
                     $progress = ($row['total_donations'] / $row['goal_amount']) * 100;
                     $progress = min($progress, 100); // Cap at 100%
-                    ?>
 
+                    // Construct the image path
+                    $imagePath = 'uploads/' . htmlspecialchars(basename($row['picture']));
+
+                    // Display the campaign card
+                    ?>
                     <div class="program-card">
-                        <img src="<?php echo htmlspecialchars($row['picture']); ?>" alt="<?php echo htmlspecialchars($row['title']); ?>">
+                        <img src="<?php echo $imagePath; ?>" alt="<?php echo htmlspecialchars($row['title']); ?>" onerror="this.src='placeholder.jpg';">
                         <div class="card-content">
                             <h3><?php echo htmlspecialchars($row['title']); ?></h3>
                             <p><?php echo htmlspecialchars($row['description']); ?></p>
@@ -175,7 +172,6 @@ $result = $conn->query($sql);
                             <a href="../donation.html" class="donate-btn">Donate Now</a>
                         </div>
                     </div>
-
                     <?php
                 }
             } else {
