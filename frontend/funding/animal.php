@@ -1,11 +1,35 @@
+<?php
+// Connect to the database
+$conn = new mysqli("localhost", "root", "", "fundarising_platform");
+
+if ($conn->connect_error) {
+    die("Connection failed: " . $conn->connect_error);
+}
+
+// Fetch campaign and donation data for 'Animals'
+$sql = "
+    SELECT 
+        campaigns.campaign_id,
+        campaigns.title,
+        campaigns.goal_amount,
+        campaigns.description,
+        campaigns.picture,
+        IFNULL(SUM(donations.amount), 0) AS total_donations
+    FROM campaigns
+    LEFT JOIN donations ON campaigns.campaign_id = donations.campaign_id
+    WHERE campaigns.campaign_type = 'Animals'
+    GROUP BY campaigns.campaign_id";
+
+$result = $conn->query($sql);
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Education Programs</title>
+    <title>Animal Welfare Programs</title>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
     <link rel="stylesheet" href="styles1.css">
     <style>
         /* Basic Styles */
@@ -113,22 +137,16 @@
     </style>
 </head>
 <body>
-    <!-- Side Navigation Bar -->
     <div class="sidenav">
         <h2 style="text-align: center; color: #38f05f;"><b>Campaigns</b></h2>
-        <a href="index.html" class="filter-btn" data-filter="all"><i class="fas fa-th-list"></i> All</a>
-        <a href="healthcare.html" id="healthcare"><i class="fas fa-heartbeat"></i> Healthcare</a>
-        <a href="education.html"><i class="fas fa-book"></i> Education</a>
-        <a href="animal.html"><i class="fas fa-paw"></i> Animals</a>
-        <a href="environment.html"><i class="fas fa-leaf"></i> Environment</a>
-        <a href="hunger.html"><i class="fas fa-utensils"></i> Hunger Relief</a>
-        <a href="cleanwater.html"><i class="fas fa-water"></i> Clean Water</a>
-        <a href="disasterrelief.html"><i class="fas fa-hands-helping"></i> Disaster Relief</a>
-        <a href="mentalhealth.html"><i class="fas fa-brain"></i> Mental Health</a>
-        <a href="refugees.html"><i class="fas fa-user-shield"></i> Refugee Support</a>
+        <a href="healthcare.php">Healthcare</a>
+        <a href="education.php">Education</a>
+        <a href="animals.php">Animals</a>
+        <a href="environment.php">Environment</a>
+        <a href="hunger_relief.php">Hunger Relief</a>
+        <!-- Add more links as needed -->
     </div>
 
-    <!-- Main Content -->
     <div class="content">
         <header>
             <h1>Animal Welfare Programs</h1>
@@ -137,54 +155,34 @@
 
         <!-- Programs Section -->
         <div class="programs-container">
-            <div class="program-card">
-                <img src="animals1.jpg" alt="Program 1">
-                <div class="card-content">
-                    <h3>Animal Rescue Operations</h3>
-                    <p>Rescuing injured, abandoned, or neglected animals and providing them with shelter and care.</p>
+            <?php
+            if ($result->num_rows > 0) {
+                while ($row = $result->fetch_assoc()) {
+                    // Calculate progress
+                    $progress = ($row['total_donations'] / $row['goal_amount']) * 100;
+                    $progress = min($progress, 100); // Cap at 100%
+                    ?>
 
-                    <!-- Progress Bar -->
-                    <div class="progress-container">
-                        <div class="progress-bar" style="width: 60%;"></div>
+                    <div class="program-card">
+                        <img src="<?php echo htmlspecialchars($row['picture']); ?>" alt="<?php echo htmlspecialchars($row['title']); ?>">
+                        <div class="card-content">
+                            <h3><?php echo htmlspecialchars($row['title']); ?></h3>
+                            <p><?php echo htmlspecialchars($row['description']); ?></p>
+                            <div class="progress-container">
+                                <div class="progress-bar" style="width: <?php echo round($progress); ?>%;"></div>
+                            </div>
+                            <p><?php echo round($progress); ?>% funded</p>
+                            <a href="../donation.html" class="donate-btn">Donate Now</a>
+                        </div>
                     </div>
 
-                    <a href="../donation.html" class="donate-btn">Donate Now</a>
-                </div>
-            </div>
-
-            <!-- Repeat for other programs, changing the width of the progress bar as needed -->
-            <div class="program-card">
-                <img src="animals2.jpg" alt="Program 2">
-                <div class="card-content">
-                    <h3>Wildlife Conservation</h3>
-                    <p>Working to preserve endangered species and protect their natural habitats through conservation programs.</p>
-                    <div class="progress-container">
-                        <div class="progress-bar" style="width: 40%;"></div>
-                    </div>
-                    <a href="../donation.html" class="donate-btn">Donate Now</a>
-                </div>
-            </div>
-
-            <div class="program-card">
-                <img src="animals3.jpg" alt="Program 3">
-                <div class="card-content">
-                    <h3>Veterinary Care for Strays</h3>
-                    <p>Providing free veterinary services for stray animals, including vaccinations, spaying and neutering.</p>
-                    <div class="progress-container">
-                        <div class="progress-bar" style="width: 75%;"></div>
-                    </div>
-                    <a href="../donation.html" class="donate-btn">Donate Now</a>
-                </div>
-            </div>
-            
-            <!-- More programs can go here -->
-        </div>
-
-        <!-- Call-to-Action Section -->
-        <div class="cta-section">
-            <h2>Help Us Protect Animals</h2>
-            <p>Join us in our mission to save and care for animals in need. Find out how you can contribute today!</p>
-            <button>Start a Campaign</button>
+                    <?php
+                }
+            } else {
+                echo "<p>No campaigns found.</p>";
+            }
+            $conn->close();
+            ?>
         </div>
 
         <!-- Footer -->
