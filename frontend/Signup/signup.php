@@ -1,6 +1,11 @@
 <?php
 // Database connection
-.
+$conn = new mysqli('localhost', 'root', '', 'fundarising_platform');
+
+// Check connection
+if ($conn->connect_error) {
+    die("Connection failed: " . $conn->connect_error);
+}
 
 // Check if form is submitted
 if (isset($_POST['submit'])) {

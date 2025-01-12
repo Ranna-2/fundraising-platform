@@ -1,11 +1,16 @@
 <?php
-require_once '../../../vendor/autoload.php';
+ini_set('display_errors', 1);
+error_reporting(E_ALL);
+
+require_once 'C:/xampp/htdocs/FundraisingProject/vendor/autoload.php';
+
+
 
 // Google Client Configuration
 $client = new Google_Client();
-$client->setClientId('342493587366-8ja5ftp0hfempp3lh1a89qqqb31legq6.apps.googleusercontent.com'); // Replace with your Google Client ID
-$client->setClientSecret('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'); // Replace with your Google Client Secret
-$client->setRedirectUri('http://localhost/FundraisingProject/frontend/public/Signup/google_signup.php');
+$client->setClientId('342493587366-8ja5ftp0hfempp3lh1a89qqqb31legq6.apps.googleusercontent.com'); //  Google Client ID
+$client->setClientSecret('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'); //  Google Client Secret
+$client->setRedirectUri('http://localhost/FundraisingProject/frontend/Signup/google_signup.php');
 $client->addScope('email');
 $client->addScope('profile');
 
@@ -29,12 +34,12 @@ if (isset($_GET['code'])) {
     $last_name = isset($names[1]) ? $names[1] : '';
 
     // Connect to your database
-    $conn = new mysqli('localhost', 'root', '', 'Fundarising_platform');
+    $conn = new mysqli('localhost', 'root', '', 'fundarising_platform');
     if ($conn->connect_error) {
         die("Connection failed: " . $conn->connect_error);
     }
 
-    // Ensure the `Users` table has the correct schema
+    
     $conn->query("
         CREATE TABLE IF NOT EXISTS Users (
             id INT AUTO_INCREMENT PRIMARY KEY,

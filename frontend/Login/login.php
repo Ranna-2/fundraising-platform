@@ -48,7 +48,7 @@ if (isset($_POST['submit'])) {
             // Check user role and redirect
             switch ($user['role']) {
                 case 'Donor':
-                    echo "Login successful! You can now go to your <a href='../Campaign/index.html'>Donor Dashboard</a>.";
+                    echo "Login successful! You can now go to your <a href='../DonorDashboard/DonorDashboard.php'>Donor Dashboard</a>.";
                     exit();
                 case 'Admin':
                     echo "Login successful! You can now go to the <a href='../../admindashboard/dashboard.html'>Admin Dashboard</a>.";

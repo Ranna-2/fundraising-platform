@@ -1,0 +1,120 @@
+-- Create table `analytics`
+CREATE TABLE analytics (
+    analytics_id INT(11) NOT NULL,
+    campaign_id INT(11) DEFAULT NULL,
+    donation_trends TEXT DEFAULT NULL,
+    donor_count INT(11) DEFAULT NULL,
+    average_donation DECIMAL(10,2) DEFAULT NULL,
+    total_donations DECIMAL(10,2) DEFAULT NULL,
+    created_at DATETIME DEFAULT NULL,
+    PRIMARY KEY (analytics_id)
+);
+
+-- Create table `campaigns`
+CREATE TABLE campaigns (
+    campaign_id INT(11) NOT NULL,
+    user_id INT(11) DEFAULT NULL,
+    title VARCHAR(255) NOT NULL,
+    goal_amount DECIMAL(10,2) NOT NULL,
+    description TEXT DEFAULT NULL,
+    picture VARCHAR(255) DEFAULT NULL,
+    campaign_type ENUM('Healthcare', 'Education', 'Animals', 'Environment', 'Hunger Relief', 'Clean Water', 'Disaster Relief', 'Mental Health', 'Refugee Support') DEFAULT NULL,
+    current_amount DECIMAL(10,2) DEFAULT NULL,
+    deadline DATETIME DEFAULT NULL,
+    created_at DATETIME DEFAULT NULL,
+    updated_at DATETIME DEFAULT NULL,
+    status ENUM('pending', 'approved', 'rejected') DEFAULT 'pending',
+    rejection_reason TEXT DEFAULT NULL,
+    PRIMARY KEY (campaign_id)
+);
+
+-- Create table `contact_form`
+CREATE TABLE contact_form (
+    id INT(11) NOT NULL,
+    name VARCHAR(255) NOT NULL,
+    email VARCHAR(255) NOT NULL,
+    phone VARCHAR(255) NOT NULL,
+    message TEXT NOT NULL,
+    created_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP(),
+    PRIMARY KEY (id)
+);
+
+-- Create table `donations`
+CREATE TABLE donations (
+    donation_id INT(11) NOT NULL,
+    receipt_id INT(11) DEFAULT NULL,
+    user_id INT(11) DEFAULT NULL,
+    campaign_id INT(11) DEFAULT NULL,
+    amount DECIMAL(10,2) NOT NULL,
+    status VARCHAR(50) DEFAULT NULL,
+    payment_method VARCHAR(50) DEFAULT NULL,
+    donation_date DATETIME DEFAULT NULL,
+    PRIMARY KEY (donation_id)
+);
+
+-- Create table `messages`
+CREATE TABLE messages (
+    message_id INT(11) NOT NULL,
+    user_id INT(11) DEFAULT NULL,
+    campaign_id INT(11) DEFAULT NULL,
+    content TEXT NOT NULL,
+    sent_at DATETIME DEFAULT NULL,
+    PRIMARY KEY (message_id)
+);
+
+-- Create table `notifications`
+CREATE TABLE notifications (
+    notification_id INT(11) NOT NULL,
+    user_id INT(11) DEFAULT NULL,
+    content TEXT NOT NULL,
+    type VARCHAR(50) DEFAULT NULL,
+    created_at DATETIME DEFAULT NULL,
+    PRIMARY KEY (notification_id)
+);
+
+-- Create table `payments`
+CREATE TABLE payments (
+    payment_id INT(11) NOT NULL,
+    donation_id INT(11) DEFAULT NULL,
+    payment_method VARCHAR(50) DEFAULT NULL,
+    amount DECIMAL(10,2) NOT NULL,
+    currency VARCHAR(10) DEFAULT NULL,
+    transaction_status VARCHAR(50) DEFAULT NULL,
+    receipt_details TEXT DEFAULT NULL,
+    PRIMARY KEY (payment_id)
+);
+
+-- Create table `receipts`
+CREATE TABLE receipts (
+    receipt_id INT(11) NOT NULL,
+    donation_id INT(11) DEFAULT NULL,
+    receipt_details TEXT DEFAULT NULL,
+    created_at DATETIME DEFAULT NULL,
+    PRIMARY KEY (receipt_id)
+);
+
+-- Create table `supporttickets`
+CREATE TABLE supporttickets (
+    ticket_id INT(11) NOT NULL,
+    description TEXT NOT NULL,
+    status VARCHAR(50) DEFAULT NULL,
+    subject VARCHAR(255) NOT NULL,
+    user_id INT(11) DEFAULT NULL,
+    created_at DATETIME DEFAULT NULL,
+    updated_at DATETIME DEFAULT NULL,
+    PRIMARY KEY (ticket_id)
+);
+
+-- Create table `users`
+CREATE TABLE users (
+    user_id INT(11) NOT NULL,
+    email VARCHAR(255) NOT NULL,
+    password VARCHAR(255) NOT NULL,
+    first_name VARCHAR(100) DEFAULT NULL,
+    last_name VARCHAR(100) DEFAULT NULL,
+    role VARCHAR(50) DEFAULT NULL,
+    profile_picture VARCHAR(255) DEFAULT NULL,
+    created_at DATETIME DEFAULT NULL,
+    updated_at DATETIME DEFAULT NULL,
+    PRIMARY KEY (user_id)
+);
