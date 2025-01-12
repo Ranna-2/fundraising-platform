@@ -13,7 +13,6 @@ $sql = "
         campaigns.title,
         campaigns.goal_amount,
         campaigns.description,
-        campaigns.picture,
         IFNULL(SUM(donations.amount), 0) AS total_donations
     FROM campaigns
     LEFT JOIN donations ON campaigns.campaign_id = donations.campaign_id
@@ -31,8 +30,41 @@ $result = $conn->query($sql);
     <title>Education Programs</title>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="styles1.css">
     <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        .sidenav {
+            width: 200px;
+            position: fixed;
+            top: 0;
+            left: 0;
+            height: 100%;
+            background-color: #2a2a2a;
+            color: white;
+            padding-top: 20px;
+        }
+
+        .sidenav a {
+            display: block;
+            color: white;
+            padding: 10px;
+            text-decoration: none;
+            text-align: center;
+        }
+
+        .sidenav a:hover {
+            background-color: #575757;
+        }
+
+        .content {
+            margin-left: 220px;
+            padding: 20px;
+        }
+
         header {
             text-align: center;
             padding: 2rem;
@@ -41,14 +73,31 @@ $result = $conn->query($sql);
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
         }
 
+        .programs-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .program-card {
+            width: calc(33% - 20px);
+            background-color: #fff;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+            overflow: hidden;
+            padding: 15px;
+        }
+
+        .card-content {
+            text-align: center;
+        }
+
         .progress-container {
             width: 80%;
             height: 8px;
             background-color: #f0f0f0;
             border-radius: 5px;
-            margin-bottom: 10px;
-            margin-left: auto;
-            margin-right: auto;
+            margin: 10px auto;
         }
 
         .progress-bar {
@@ -64,13 +113,16 @@ $result = $conn->query($sql);
             padding: 8px 15px;
             border-radius: 5px;
             text-decoration: none;
-            margin-top: 10px;
             font-size: 14px;
-            width: auto;
-            max-width: 200px;
+            margin-top: 10px;
+        }
+
+        footer {
             text-align: center;
-            margin-left: auto;
-            margin-right: auto;
+            padding: 1rem;
+            margin-top: 20px;
+            background-color: #2a2a2a;
+            color: white;
         }
     </style>
 </head>
@@ -108,7 +160,6 @@ $result = $conn->query($sql);
                     ?>
 
                     <div class="program-card">
-                        <img src="<?php echo htmlspecialchars($row['picture']); ?>" alt="<?php echo htmlspecialchars($row['title']); ?>">
                         <div class="card-content">
                             <h3><?php echo htmlspecialchars($row['title']); ?></h3>
                             <p><?php echo htmlspecialchars($row['description']); ?></p>
@@ -116,7 +167,7 @@ $result = $conn->query($sql);
                                 <div class="progress-bar" style="width: <?php echo round($progress); ?>%;"></div>
                             </div>
                             <p><?php echo round($progress); ?>% funded</p>
-                            <a href="../donation.html" class="donate-btn">Donate Now</a>
+                            <a href="../donation.php" class="donate-btn">Donate Now</a>
                         </div>
                     </div>
 
@@ -128,6 +179,7 @@ $result = $conn->query($sql);
             $conn->close();
             ?>
         </div>
+
         <!-- Footer -->
         <footer>
             &copy; 2024 KindledHope. All Rights Reserved.

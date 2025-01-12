@@ -20,7 +20,7 @@ $campaignsResult = $campaignsStmt->get_result();
 
 // Fetch donation history
 $donationsQuery = "
-    SELECT d.donation_date, c.title AS campaign, d.amount
+    SELECT d.created_at, c.title AS campaign, d.amount
     FROM donations d
     JOIN campaigns c ON d.campaign_id = c.campaign_id
     WHERE d.donation_id = ?";
@@ -122,7 +122,7 @@ $donationsResult = $donationsStmt->get_result();
                 <table class="table table-bordered">
                     <thead>
                         <tr>
-                            <th>Date</th>
+                            
                             <th>Campaign</th>
                             <th>Amount</th>
                         </tr>
@@ -131,7 +131,7 @@ $donationsResult = $donationsStmt->get_result();
                         <?php if ($donationsResult->num_rows > 0): ?>
                             <?php while ($donation = $donationsResult->fetch_assoc()): ?>
                                 <tr>
-                                    <td><?php echo htmlspecialchars($donation['date']); ?></td>
+                                   
                                     <td><?php echo htmlspecialchars($donation['campaign']); ?></td>
                                     <td>$<?php echo number_format($donation['amount'], 2); ?></td>
                                 </tr>

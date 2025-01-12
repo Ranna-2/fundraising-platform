@@ -13,7 +13,6 @@ $sql = "
         campaigns.title,
         campaigns.goal_amount,
         campaigns.description,
-        campaigns.picture, 
         IFNULL(SUM(donations.amount), 0) AS total_donations
     FROM campaigns
     LEFT JOIN donations ON campaigns.campaign_id = donations.campaign_id
@@ -65,21 +64,68 @@ $result = $conn->query($sql);
             text-align: center;
             margin: 10px auto;
         }
+
+        .sidenav {
+            width: 200px;
+            position: fixed;
+            top: 0;
+            left: 0;
+            height: 100%;
+            background-color: #2a2a2a;
+            color: white;
+            padding-top: 20px;
+        }
+
+        .sidenav a {
+            display: block;
+            color: white;
+            padding: 10px;
+            text-decoration: none;
+            text-align: center;
+        }
+
+        .sidenav a:hover {
+            background-color: #575757;
+        }
+
+        .content {
+            margin-left: 220px;
+            padding: 20px;
+        }
+
+        .programs-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .program-card {
+            width: calc(33% - 20px);
+            background-color: #fff;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+            overflow: hidden;
+        }
+
+        .card-content {
+            padding: 15px;
+            text-align: center;
+        }
     </style>
 </head>
 <body>
     <div class="sidenav">
         <h2 style="text-align: center; color: #38f05f;"><b>Campaigns</b></h2>
         <a href="index.html" class="filter-btn" data-filter="all"><i class="fas fa-th-list"></i> All</a>
-        <a href="healthcare.html"><i class="fas fa-heartbeat"></i> Healthcare</a>
-        <a href="education.html"><i class="fas fa-book"></i> Education</a>
-        <a href="animal.html"><i class="fas fa-paw"></i> Animals</a>
-        <a href="environment.html"><i class="fas fa-leaf"></i> Environment</a>
-        <a href="hunger.html"><i class="fas fa-utensils"></i> Hunger Relief</a>
-        <a href="cleanwater.html"><i class="fas fa-water"></i> Clean Water</a>
-        <a href="disasterrelief.html"><i class="fas fa-hands-helping"></i> Disaster Relief</a>
-        <a href="mentalhealth.html"><i class="fas fa-brain"></i> Mental Health</a>
-        <a href="refugees.html"><i class="fas fa-user-shield"></i> Refugee Support</a>
+        <a href="healthcare.php"><i class="fas fa-heartbeat"></i> Healthcare</a>
+        <a href="education.php"><i class="fas fa-book"></i> Education</a>
+        <a href="animal.php"><i class="fas fa-paw"></i> Animals</a>
+        <a href="environment.php"><i class="fas fa-leaf"></i> Environment</a>
+        <a href="hunger.php"><i class="fas fa-utensils"></i> Hunger Relief</a>
+        <a href="cleanwater.php"><i class="fas fa-water"></i> Clean Water</a>
+        <a href="disasterrelief.php"><i class="fas fa-hands-helping"></i> Disaster Relief</a>
+        <a href="mentalhealth.php"><i class="fas fa-brain"></i> Mental Health</a>
+        <a href="refugees.php"><i class="fas fa-user-shield"></i> Refugee Support</a>
     </div>
 
     <div class="content">
@@ -98,7 +144,6 @@ $result = $conn->query($sql);
                     ?>
 
                     <div class="program-card">
-                        <img src="<?php echo htmlspecialchars($row['picture']); ?>" alt="<?php echo htmlspecialchars($row['title']); ?>">
                         <div class="card-content">
                             <h3><?php echo htmlspecialchars($row['title']); ?></h3>
                             <p><?php echo htmlspecialchars($row['description']); ?></p>
@@ -106,7 +151,7 @@ $result = $conn->query($sql);
                                 <div class="progress-bar" style="width: <?php echo round($progress); ?>%;"></div>
                             </div>
                             <p><?php echo round($progress); ?>% funded</p>
-                            <a href="../donation.html" class="donate-btn">Donate Now</a>
+                            <a href="../donation.php" class="donate-btn">Donate Now</a>
                         </div>
                     </div>
 

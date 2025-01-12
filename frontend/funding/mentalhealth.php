@@ -13,7 +13,6 @@ $sql = "
         campaigns.title,
         campaigns.goal_amount,
         campaigns.description,
-        campaigns.picture,
         IFNULL(SUM(donations.amount), 0) AS total_donations
     FROM campaigns
     LEFT JOIN donations ON campaigns.campaign_id = donations.campaign_id
@@ -67,8 +66,6 @@ $result = $conn->query($sql);
             text-decoration: none;
             margin-top: 10px;
             font-size: 14px;
-            width: auto;
-            max-width: 200px;
             text-align: center;
             margin-left: auto;
             margin-right: auto;
@@ -77,63 +74,61 @@ $result = $conn->query($sql);
 </head>
 
 <body>
-     <!-- Side Navigation Bar -->
+    <!-- Side Navigation Bar -->
     <div class="sidenav">
         <h2 style="text-align: center; color: #38f05f;"><b>Campaigns</b></h2>
         <a href="index.html" class="filter-btn" data-filter="all"><i class="fas fa-th-list"></i> All</a>
-        <a href="healthcare.html" id="healthcare"><i class="fas fa-heartbeat"></i> Healthcare</a>
-        <a href="education.html"><i class="fas fa-book"></i> Education</a>
-        <a href="animal.html"><i class="fas fa-paw"></i> Animals</a>
-        <a href="environment.html"><i class="fas fa-leaf"></i> Environment</a>
-        <a href="hunger.html"><i class="fas fa-utensils"></i> Hunger Relief</a>
-        <a href="cleanwater.html"><i class="fas fa-water"></i> Clean Water</a>
-        <a href="disasterrelief.html"><i class="fas fa-hands-helping"></i> Disaster Relief</a>
-        <a href="mentalhealth.html"><i class="fas fa-brain"></i> Mental Health</a>
-        <a href="refugees.html"><i class="fas fa-user-shield"></i> Refugee Support</a>
+        <a href="healthcare.php"><i class="fas fa-heartbeat"></i> Healthcare</a>
+        <a href="education.php"><i class="fas fa-book"></i> Education</a>
+        <a href="animal.php"><i class="fas fa-paw"></i> Animals</a>
+        <a href="environment.php"><i class="fas fa-leaf"></i> Environment</a>
+        <a href="hunger.php"><i class="fas fa-utensils"></i> Hunger Relief</a>
+        <a href="cleanwater.php"><i class="fas fa-water"></i> Clean Water</a>
+        <a href="disasterrelief.php"><i class="fas fa-hands-helping"></i> Disaster Relief</a>
+        <a href="mentalhealth.php"><i class="fas fa-brain"></i> Mental Health</a>
+        <a href="refugees.php"><i class="fas fa-user-shield"></i> Refugee Support</a>
     </div>
 
     <!-- Header -->
     <div class="content">
-    <header>
-        <h1>Mental Health Programs</h1>
-        <p>Join us in supporting mental health initiatives aimed at fostering well-being and providing support to those in need.</p>
-    </header>
+        <header>
+            <h1>Mental Health Programs</h1>
+            <p>Join us in supporting mental health initiatives aimed at fostering well-being and providing support to those in need.</p>
+        </header>
 
-    <!-- Programs Section -->
-    <div class="programs-container">
-        <?php
-        if ($result->num_rows > 0) {
-            while ($row = $result->fetch_assoc()) {
-                // Calculate progress
-                $progress = ($row['total_donations'] / $row['goal_amount']) * 100;
-                $progress = min($progress, 100); // Cap at 100%
-                ?>
-
-                <div class="program-card">
-                    <img src="<?php echo htmlspecialchars($row['picture']); ?>" alt="<?php echo htmlspecialchars($row['title']); ?>">
-                    <div class="card-content">
-                        <h3><?php echo htmlspecialchars($row['title']); ?></h3>
-                        <p><?php echo htmlspecialchars($row['description']); ?></p>
-                        <div class="progress-container">
-                            <div class="progress-bar" style="width: <?php echo round($progress); ?>%;"></div>
+        <!-- Programs Section -->
+        <div class="programs-container">
+            <?php
+            if ($result->num_rows > 0) {
+                while ($row = $result->fetch_assoc()) {
+                    // Calculate progress
+                    $progress = ($row['total_donations'] / $row['goal_amount']) * 100;
+                    $progress = min($progress, 100); // Cap at 100%
+                    ?>
+                    <div class="program-card">
+                        <div class="card-content">
+                            <h3><?php echo htmlspecialchars($row['title']); ?></h3>
+                            <p><?php echo htmlspecialchars($row['description']); ?></p>
+                            <div class="progress-container">
+                                <div class="progress-bar" style="width: <?php echo round($progress); ?>%;"></div>
+                            </div>
+                            <p><?php echo round($progress); ?>% funded</p>
+                            <a href="../donation.php" class="donate-btn">Donate Now</a>
                         </div>
-                        <p><?php echo round($progress); ?>% funded</p>
-                        <a href="../donation.html" class="donate-btn">Donate Now</a>
                     </div>
-                </div>
-
-                <?php
+                    <?php
+                }
+            } else {
+                echo "<p>No campaigns found.</p>";
             }
-        } else {
-            echo "<p>No campaigns found.</p>";
-        }
-        $conn->close();
-        ?>
-    </div>
-    <!-- Footer -->
-    <footer>
-        &copy; 2024 KindledHope. All Rights Reserved.
-    </footer>
+            $conn->close();
+            ?>
+        </div>
+
+        <!-- Footer -->
+        <footer>
+            &copy; 2024 KindledHope. All Rights Reserved.
+        </footer>
     </div>
 </body>
 
