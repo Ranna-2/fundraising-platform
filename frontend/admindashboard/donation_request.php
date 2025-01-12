@@ -73,7 +73,7 @@ if (isset($_POST['reject'])) {
                 </thead>
                 <tbody>
                     <?php
-                    $sql = "SELECT * FROM donations WHERE status=''";
+                    $sql = "SELECT * FROM donations WHERE status='pending'";
                     $result = $conn->query($sql);
 
                     if ($result->num_rows > 0) {

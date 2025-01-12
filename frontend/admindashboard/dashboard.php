@@ -91,10 +91,11 @@ $totalDonated = $conn->query("SELECT SUM(amount) as total FROM donations")->fetc
             </a>
           </li>
           <li class="sidebar-list-item">
-            <a href="payment_settings.php">
-              <span class="material-icons-outlined">payment</span> Payment Settings
+            <a href="donation_request.php">
+              <span class="material-icons-outlined">donation_request</span> Payment Settings
             </a>
           </li>
+          
           <li class="sidebar-list-item">
             <a href="add_campaign.php">
               <span class="material-icons-outlined">add_box</span> Add Campaign
