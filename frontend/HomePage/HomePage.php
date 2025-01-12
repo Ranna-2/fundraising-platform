@@ -15,7 +15,7 @@ if ($_SERVER["REQUEST_METHOD"] == "GET" && isset($_GET['category'])) {
             header("Location: ../funding/animal.php");
             exit();
         case "Health":
-            header("Location: ../funding/health.php");
+            header("Location: ../funding/healthcare.php");
             exit();
         case "Education":
             header("Location: ../funding/education.php");
@@ -161,7 +161,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['submit_contact'])) {
                 <p class="campaign-description">Providing free health checkup camps for underprivileged communities to detect and treat diseases early.</p>
                 <div class="campaign-footer">
                     <span class="campaign-raised">$5,000 raised</span>
-                    <a href="../donation.html" class="donate-button" >Donate </a>
+                    <a href="../donation.php" class="donate-button" >Donate </a>
                 </div>
             </div>
         </div>
@@ -172,7 +172,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['submit_contact'])) {
                 <p class="campaign-description">Delivering essential food supplies and clean drinking water to affected regions after a disaster.</p>
                 <div class="campaign-footer">
                     <span class="campaign-raised">$3,200 raised</span>
-                    <a href="../donation.html" class="donate-button" >Donate </a>
+                    <a href="../donation.php" class="donate-button" >Donate </a>
                 </div>
             </div>
         </div>
@@ -183,7 +183,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['submit_contact'])) {
                 <p class="campaign-description">Ensuring that children in need receive daily meals to keep them healthy and focused in school.</p>
                 <div class="campaign-footer">
                     <span class="campaign-raised">$7,800 raised</span>
-                    <a href="../donation.html" class="donate-button" >Donate </a>
+                    <a href="../donation.php" class="donate-button" >Donate </a>
                 </div>
             </div>
         </div>

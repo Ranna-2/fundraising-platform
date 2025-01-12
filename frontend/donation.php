@@ -125,35 +125,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['donate'])) {
     </div>
 
     <!-- Admin Donation Table -->
-    <div class="container mt-5">
-        <h4>Pending Donations for Approval</h4>
-        <table class="table table-bordered">
-            <thead>
-                <tr>
-                    <th>Donor</th>
-                    <th>Amount</th>
-                    <th>Transfer Slip</th>
-                    <th>Status</th>
-                    <th>Action</th>
-                </tr>
-            </thead>
-            <tbody>
-                <!-- PHP code to fetch pending donations -->
-                <?php
-                $stmt = $conn->query("SELECT * FROM donations WHERE status = 'pending'");
-                while ($row = $stmt->fetch()) {
-                    echo "<tr>";
-                    echo "<td>{$row['donor_name']}</td>";
-                    echo "<td>{$row['donation_amount']}</td>";
-                    echo "<td><img src='uploads/{$row['transfer_slip']}' alt='Transfer Slip' width='100'></td>";
-                    echo "<td>{$row['status']}</td>";
-                    echo "<td><button class='btn btn-success'>Approve</button><button class='btn btn-danger'>Reject</button></td>";
-                    echo "</tr>";
-                }
-                ?>
-            </tbody>
-        </table>
-    </div>
+
 
     <!-- Footer -->
     <footer class="bg-light text-center text-lg-start mt-5">
