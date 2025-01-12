@@ -68,7 +68,7 @@ if (isset($_GET['code'])) {
         
         if ($stmt->execute()) {
             // Redirect to login after successful registration
-            echo "Registration successful! You can now <a href='../donation.html'>continue</a>";
+            echo "Registration successful! You can now <a href='../donation.php'>continue</a>";
         } else {
             echo "Error: " . $stmt->error;
         }
