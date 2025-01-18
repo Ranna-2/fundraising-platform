@@ -73,10 +73,7 @@
                                             echo "<td>" . $row['donors'] . "</td>";
                                             echo "<td>" . $row['start_date'] . "</td>";
                                             echo "<td>" . $row['deadline'] . "</td>";
-                                            echo "<td>" . ucfirst($row['status']) . "</td>";
-                                            echo "<td>
-                                                    <button class='btn btn-sm btn-primary edit-btn'>Edit</button>
-                                                  </td>";
+                                            
                                             echo "</tr>";
                                         }
                                     } else {
@@ -218,7 +215,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['ajax'])) {
             ]
         ]);
     } else {
-        echo json_encode(['success' => false, 'message' => 'Failed to update campaign.']);
+        echo json_encode(['success' => false, 'message' => 'Successfully updated campaign.']);
     }
 
     $stmt->close();

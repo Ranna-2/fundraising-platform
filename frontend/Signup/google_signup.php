@@ -58,7 +58,7 @@ if (isset($_GET['code'])) {
     $result = $stmt->get_result();
 
     if ($result->num_rows > 0) {
-        echo "You are already registered! <a href='../donation.html'>Log in</a>";
+        echo "You are already registered! <a href='../donation.php'>Log in</a>";
     } else {
         // Insert new user with 'Donor' as the default role
         $role = 'Donor';

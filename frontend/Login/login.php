@@ -54,7 +54,7 @@ if (isset($_POST['submit'])) {
                     echo "Login successful! You can now go to the <a href='../../admindashboard/dashboard.html'>Admin Dashboard</a>.";
                     exit();
                 case 'Fundraiser':
-                    echo "Login successful! You can now go to your <a href='../Campaign/index.html'>Fundraiser Dashboard</a>.";
+                    echo "Login successful! You can now go to your <a href='../funding/index.html'>Fundraiser Dashboard</a>.";
                     exit();
                 default:
                     echo "Unknown role!";

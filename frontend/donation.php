@@ -111,18 +111,19 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['donate'])) {
                         <input type="checkbox" id="anonymous-donation" name="anonymous"> Donate Anonymously
                     </label>
                 </div>
+                   <!-- Support Section -->
+        <div class="container mt-5">
+            <h5>Words of Support</h5>
+            <textarea class="form-control" rows="3" placeholder="Leave a message of support..."></textarea>
+        </div>
+    </div>
                 <div class="text-center">
                     <button type="submit" name="donate" class="btn btn-primary">Submit Donation</button>
                 </div>
             </form>
         </div>
 
-        <!-- Support Section -->
-        <div class="container mt-5">
-            <h5>Words of Support</h5>
-            <textarea class="form-control" rows="3" placeholder="Leave a message of support..."></textarea>
-        </div>
-    </div>
+     
 
     <!-- Admin Donation Table -->
 

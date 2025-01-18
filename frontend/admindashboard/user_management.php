@@ -75,8 +75,7 @@
                                         <th>Name</th>
                                         <th>Email</th>
                                         <th>Role</th>
-                                        <th>Status</th>
-                                        <th>Actions</th>
+                                        
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -98,10 +97,7 @@
                                                 <td>" . htmlspecialchars($row['email']) . "</td>
                                                 <td>" . htmlspecialchars($row['role']) . "</td>
                                                 
-                                                <td class='text-end'>
-                                                    <a href='#' class='btn btn-outline-info btn-rounded'><i class='fas fa-pen'></i></a>
-                                                    <a href='#' class='btn btn-outline-danger btn-rounded'><i class='fas fa-trash'></i></a>
-                                                </td>
+                                                
                                             </tr>";
                                         }
                                     } else {

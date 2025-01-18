@@ -39,14 +39,6 @@ $result = $conn->query($sql);
             padding: 0;
         }
 
-        header {
-            text-align: center;
-            padding: 2rem;
-            background: linear-gradient(45deg, #01383e, #6be9cf);
-            color: white;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-        }
-
         .sidenav {
             width: 200px;
             position: fixed;
@@ -75,19 +67,12 @@ $result = $conn->query($sql);
             padding: 20px;
         }
 
-        .programs-container {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 20px;
-        }
-
-        .program-card {
-            width: calc(33% - 20px);
-            background-color: #fff;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-            border-radius: 10px;
-            padding: 15px;
+        header {
             text-align: center;
+            padding: 2rem;
+            background: linear-gradient(45deg, #01383e, #6be9cf);
+            color: white;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
         }
 
         .progress-container {
@@ -113,9 +98,13 @@ $result = $conn->query($sql);
             padding: 8px 15px;
             border-radius: 5px;
             text-decoration: none;
+            margin-top: 10px;
             font-size: 14px;
+            width: auto;
+            max-width: 200px;
             text-align: center;
-            margin: 10px auto 0;
+            margin-left: auto;
+            margin-right: auto;
         }
     </style>
 </head>

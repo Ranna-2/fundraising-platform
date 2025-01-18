@@ -29,7 +29,7 @@ if (isset($_POST['reject'])) {
 
     // Validate rejection reason before updating
     if (!empty($rejection_reason)) {
-        $sql = "UPDATE donations SET status='rejected', rejection_reason='$rejection_reason' WHERE donation_id='$donation_id'";
+        $sql = "UPDATE donations SET status='rejected'='$rejection_reason' WHERE donation_id='$donation_id'";
         if ($conn->query($sql) === TRUE) {
             echo "Donation rejected successfully!";
         } else {
