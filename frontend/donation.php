@@ -51,7 +51,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['donate'])) {
     <!-- Navbar -->
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
         <div class="container">
-            <a class="navbar-brand" href="#"><img src="logo.jpg" style="height: 20px;"></a>
+            <a class="navbar-brand" href="#"><img src="logo.jpg" style="height: 50px;"></a>
             <h1 class="text-2xl font-extrabold text-gray-800 animate-bounce">
                 <a href="./HomePage/HomePage.html" class="hover:text-blue-600 transition duration-200">
                     <span class="bg-gradient-to-r from-blue-500 to-green-500 text-transparent bg-clip-text">KindledHope</span>

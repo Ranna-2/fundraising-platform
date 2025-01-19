@@ -31,19 +31,10 @@ $result = $conn->query($sql);
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles1.css">
     <style>
-        /* Basic Styles */
-        body {
+   body {
             font-family: 'Poppins', sans-serif;
             margin: 0;
             padding: 0;
-        }
-
-        header {
-            text-align: center;
-            padding: 2rem;
-            background: linear-gradient(45deg, #01383e, #c69595);
-            color: white;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
         }
 
         .sidenav {
@@ -74,6 +65,14 @@ $result = $conn->query($sql);
             padding: 20px;
         }
 
+        header {
+            text-align: center;
+            padding: 2rem;
+            background: linear-gradient(45deg, #01383e, #6be9cf);
+            color: white;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
         .programs-container {
             display: flex;
             flex-wrap: wrap;
@@ -85,7 +84,11 @@ $result = $conn->query($sql);
             background-color: #fff;
             box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
             border-radius: 10px;
+            overflow: hidden;
             padding: 15px;
+        }
+
+        .card-content {
             text-align: center;
         }
 
@@ -94,9 +97,7 @@ $result = $conn->query($sql);
             height: 8px;
             background-color: #f0f0f0;
             border-radius: 5px;
-            margin-bottom: 10px;
-            margin-left: auto;
-            margin-right: auto;
+            margin: 10px auto;
         }
 
         .progress-bar {
@@ -113,8 +114,15 @@ $result = $conn->query($sql);
             border-radius: 5px;
             text-decoration: none;
             font-size: 14px;
+            margin-top: 10px;
+        }
+
+        footer {
             text-align: center;
-            margin: 10px auto 0;
+            padding: 1rem;
+            margin-top: 20px;
+            background-color: #2a2a2a;
+            color: white;
         }
     </style>
 </head>

@@ -18,6 +18,38 @@
    
 
 </head>
+<style>
+  /* Styling for the FAQ section */
+  .faq-question {
+    background: none;
+    border: none;
+    font-size: 1.1rem;
+    font-weight: bold;
+    text-align: left;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    padding: 10px 20px;
+    color: #333;
+    transition: background 0.3s;
+  }
+  .faq-question:hover {
+    background-color: #f1f1f1;
+  }
+  .faq-answer {
+    display: none;
+    padding: 10px 20px;
+    background-color: #f9f9f9;
+    border-left: 3px solid #007bff;
+    font-size: 1rem;
+    color: #555;
+  }
+  .faq-icon {
+    font-weight: bold;
+    font-size: 1.5rem;
+  }
+</style>
 
 <body>
   <!-- Navbar -->
@@ -260,81 +292,95 @@
     </section>
   </main>
   
- <!-- Add this FAQ Section before the Footer -->
+<!-- Add this FAQ Section before the Footer -->
 <!-- FAQ Section -->
-<section class="faq-section" id="faq-section" >
+<section class="faq-section" id="faq-section">
   <div class="container">
     <h2 class="section-title">Frequently Asked Questions</h2>
     <div class="faq-container">
       <!-- FAQ 1 -->
       <div class="faq-item">
-        <input type="checkbox" id="faq1" class="faq-checkbox">
-        <label for="faq1" class="faq-question">
-          What is the purpose of the Help Center? 
+        <button class="faq-question" id="faq1-btn">
+          <span>What is the purpose of the Help Center?</span>
           <span class="faq-icon">+</span>
-        </label>
-        <div class="faq-answer">
+        </button>
+        <div class="faq-answer" id="faq1-answer">
           <p>The Help Center provides resources, guides, and support to assist you in resolving issues and finding solutions efficiently.</p>
         </div>
       </div>
       <!-- FAQ 2 -->
       <div class="faq-item">
-        <input type="checkbox" id="faq2" class="faq-checkbox">
-        <label for="faq2" class="faq-question">
-          How do I reset my password? 
+        <button class="faq-question" id="faq2-btn">
+          <span>How do I reset my password?</span>
           <span class="faq-icon">+</span>
-        </label>
-        <div class="faq-answer">
+        </button>
+        <div class="faq-answer" id="faq2-answer">
           <p>You can reset your password by visiting the login page, clicking on "Forgot Password," and following the instructions sent to your email.</p>
         </div>
       </div>
       <!-- FAQ 3 -->
       <div class="faq-item">
-        <input type="checkbox" id="faq3" class="faq-checkbox">
-        <label for="faq3" class="faq-question">
-          How can I contact customer support? 
+        <button class="faq-question" id="faq3-btn">
+          <span>How can I contact customer support?</span>
           <span class="faq-icon">+</span>
-        </label>
-        <div class="faq-answer">
+        </button>
+        <div class="faq-answer" id="faq3-answer">
           <p>Contact our support team via live chat on our website or through the "Contact Us" section to submit a query.</p>
         </div>
       </div>
       <!-- FAQ 4 -->
       <div class="faq-item">
-        <input type="checkbox" id="faq4" class="faq-checkbox">
-        <label for="faq4" class="faq-question">
-          Is my account information secure? 
+        <button class="faq-question" id="faq4-btn">
+          <span>Is my account information secure?</span>
           <span class="faq-icon">+</span>
-        </label>
-        <div class="faq-answer">
+        </button>
+        <div class="faq-answer" id="faq4-answer">
           <p>Yes, your account information is protected with advanced encryption methods and secure storage protocols.</p>
         </div>
       </div>
       <!-- FAQ 5 -->
       <div class="faq-item">
-        <input type="checkbox" id="faq5" class="faq-checkbox">
-        <label for="faq5" class="faq-question">
-          Can I change my subscription plan? 
+        <button class="faq-question" id="faq5-btn">
+          <span>Can I change my subscription plan?</span>
           <span class="faq-icon">+</span>
-        </label>
-        <div class="faq-answer">
+        </button>
+        <div class="faq-answer" id="faq5-answer">
           <p>Yes, you can upgrade or downgrade your subscription plan anytime from your account settings.</p>
         </div>
       </div>
       <!-- FAQ 6 -->
       <div class="faq-item">
-        <input type="checkbox" id="faq6" class="faq-checkbox">
-        <label for="faq6" class="faq-question">
-          What payment methods are accepted? 
+        <button class="faq-question" id="faq6-btn">
+          <span>What payment methods are accepted?</span>
           <span class="faq-icon">+</span>
-        </label>
-        <div class="faq-answer">
-          <p>We accept payments via credit/debit cards, PayPal and direct bank transfers.</p>
+        </button>
+        <div class="faq-answer" id="faq6-answer">
+          <p>We accept payments via credit/debit cards, PayPal, and direct bank transfers.</p>
         </div>
       </div>
     </div>
   </div>
 </section>
+
+<!-- Add this JavaScript to enable dropdown functionality -->
+<script>
+  document.querySelectorAll('.faq-question').forEach(button => {
+    button.addEventListener('click', function() {
+      // Toggle the visibility of the corresponding answer
+      const answer = this.nextElementSibling;
+      const icon = this.querySelector('.faq-icon');
+
+      // Toggle between showing and hiding the answer
+      if (answer.style.display === "block") {
+        answer.style.display = "none";
+        icon.textContent = "+";  // Change icon back to "+"
+      } else {
+        answer.style.display = "block";
+        icon.textContent = "-";  // Change icon to "-"
+      }
+    });
+  });
+</script>
 
 
   <!-- New Footer Section -->

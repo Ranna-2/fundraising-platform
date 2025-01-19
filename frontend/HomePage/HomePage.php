@@ -1,4 +1,5 @@
 <?php
+
 // Establish database connection
 try {
     $conn = new PDO('mysql:host=localhost;dbname=fundarising_platform', 'root', '');
@@ -7,56 +8,41 @@ try {
     die("Connection failed: " . $e->getMessage());
 }
 
-// Handle category search
-if ($_SERVER["REQUEST_METHOD"] == "GET" && isset($_GET['category'])) {
-    $category = $_GET['category'];
-    switch ($category) {
-        case "Animals":
-            header("Location: ../funding/animal.php");
-            exit();
-        case "Health":
-            header("Location: ../funding/healthcare.php");
-            exit();
-        case "Education":
-            header("Location: ../funding/education.php");
-            exit();
-        case "Environment":
-            header("Location: ../funding/environment.php");
-            exit();
-        default:
-            header("Location: ../funding/index.html");
-            exit();
-    }
-}
-
 // Handle contact form submission
 if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['submit_contact'])) {
-    $name = $_POST['name'];
-    $email = $_POST['email'];
-    $phone = $_POST['phone'];
-    $message = $_POST['message'];
+    $name = trim($_POST['name']);
+    $email = trim($_POST['email']);
+    $phone = trim($_POST['phone']);
+    $message = trim($_POST['message']);
     $created_at = date('Y-m-d H:i:s');
-    
-    // Form validation
+
+    // Validate inputs
     if (empty($name) || empty($email) || empty($phone) || empty($message)) {
         echo "<script>alert('All fields are required!');</script>";
+    } elseif (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+        echo "<script>alert('Invalid email format!');</script>";
     } else {
-        // Insert message into the contact_form table
-        $sql = "INSERT INTO contact_form (name, email, phone, message, created_at) 
-                VALUES (:name, :email, :phone, :message, :created_at)";
-        $stmt = $conn->prepare($sql);
-        $stmt->bindParam(':name', $name);
-        $stmt->bindParam(':email', $email);
-        $stmt->bindParam(':phone', $phone);
-        $stmt->bindParam(':message', $message);
-        $stmt->bindParam(':created_at', $created_at);
+        try {
+            // Insert message into the database
+            $sql = "INSERT INTO contact_form (name, email, phone, message, created_at) 
+                    VALUES (:name, :email, :phone, :message, :created_at)";
+            $stmt = $conn->prepare($sql);
+            $stmt->bindParam(':name', $name);
+            $stmt->bindParam(':email', $email);
+            $stmt->bindParam(':phone', $phone);
+            $stmt->bindParam(':message', $message);
+            $stmt->bindParam(':created_at', $created_at);
 
-        if ($stmt->execute()) {
-            echo "<script>alert('Message sent successfully!');</script>";
-        } else {
-            echo "<script>alert('There was an error sending your message.');</script>";
+            if ($stmt->execute()) {
+                echo "<script>alert('Message sent successfully!');</script>";
+            } else {
+                echo "<script>alert('Error sending your message. Please try again later.');</script>";
+            }
+        } catch (Exception $e) {
+            echo "<script>alert('Database error: {$e->getMessage()}');</script>";
         }
     }
+
 }
 ?>
 
@@ -286,7 +272,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['submit_contact'])) {
                         </div>
                     </div>
                 </div>
-                <d<form id="contactForm" class="bg-white p-4 rounded shadow h-100" method="POST" action="">
+                <form id="contactForm" class="bg-white p-4 rounded shadow h-100" method="POST" action="">
     <div class="mb-3">
         <label for="name" class="form-label">Name</label>
         <input type="text" class="form-control" id="name" name="name" placeholder="John Smith" required>
@@ -301,10 +287,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['submit_contact'])) {
     </div>
     <div class="mb-3">
         <label for="message" class="form-label">Message</label>
-        <textarea class="form-control" id="message" name="message" rows="4" placeholder="Write your message" required></textarea>
+        <textarea class="form-control" id="message" name="message" rows="4" placeholder="Write your message..." required></textarea>
     </div>
-    <button type="submit" name="submit_contact" class="btn btn-success">Send Message</button>
+    <button type="submit" class="btn btn-primary" name="submit_contact">Send Message</button>
 </form>
+
 
                 </div>
             </div>

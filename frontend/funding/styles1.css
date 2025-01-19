@@ -1,157 +1,102 @@
+/* General Body Styling */
+body {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+}
 
-        body {
-            font-family: 'Poppins', sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #f8f9fa;
-        }
+/* Side Navigation Bar */
+.sidenav {
+    width: 200px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    background-color: #2a2a2a;
+    color: white;
+    padding-top: 20px;
+}
 
-        /* Side Navbar Styles */
-        .sidenav {
-            width: 250px;
-            background: #333;
-            color: white;
-            position: fixed;
-            height: 100%;
-           padding-top: 20px;
-        }
+.sidenav a {
+    display: block;
+    color: white;
+    padding: 10px;
+    text-decoration: none;
+    text-align: center;
+}
 
-        .sidenav a {
-            display: block;
-            color: white;
-            padding: 15px;
-            text-decoration: none;
-            font-size: 1.2rem;
-            transition: background 0.3s
-        }
+.sidenav a:hover {
+    background-color: #575757;
+}
 
-        .sidenav a i {
-            margin-right: 10px;
-        }
+/* Main Content Area */
+.content {
+    margin-left: 220px;
+    padding: 20px;
+}
 
-        .sidenav a:hover {
-            background-color: #28a745; 
-            color: white; 
-        }
+/* Header Styling */
+header {
+    text-align: center;
+    padding: 2rem;
+    background: linear-gradient(45deg, #01383e, #6be9cf);
+    color: white;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
 
-        /* Content Wrapper */
-        .content {
-            margin-left: 260px; 
-            padding: 20px;
-        }
+/* Programs Container */
+.programs-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
 
-        header h1 {
-            font-size: 3rem;
-            margin-bottom: 30px;
-        }
+/* Individual Program Cards */
+.program-card {
+    width: calc(33% - 20px);
+    background-color: #fff;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    overflow: hidden;
+    padding: 15px;
+}
 
-        header p {
-            font-size: 1.3rem;
-            margin-top: 0.5rem;
-            line-height: 1.6;
-            color:lightgrey ;
-        }
+.card-content {
+    text-align: center;
+}
 
-        .programs-container {
-            max-width: 1200px;
-            margin: 2rem auto;
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-            padding: 0 1rem;
-        }
+/* Progress Bar Styling */
+.progress-container {
+    width: 80%;
+    height: 8px;
+    background-color: #f0f0f0;
+    border-radius: 5px;
+    margin: 10px auto;
+}
 
-        .program-card {
-            background: white;
-            border-radius: 12px;
-            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
-            overflow: hidden;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
+.progress-bar {
+    height: 100%;
+    background-color: #38f05f;
+    border-radius: 5px;
+}
 
-        .program-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
-        }
+/* Donation Button */
+.donate-btn {
+    display: inline-block;
+    background-color: #38f05f;
+    color: white;
+    padding: 8px 15px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-size: 14px;
+    margin-top: 10px;
+}
 
-        .program-card img {
-            width: 100%;
-            height: 200px;
-            object-fit: cover;
-        }
-
-        .program-card .card-content {
-            padding: 1.5rem;
-        }
-
-        .program-card h3 {
-            font-size: 1.8rem;
-            margin: 0.5rem 0;
-            color: #218838;
-        }
-
-        .program-card p {
-            font-size: 1rem;
-            color: #555;
-            line-height: 1.5;
-            margin-bottom: 1rem;
-        }
-
-        .program-card .donate-btn {
-            background: linear-gradient(45deg, #a5229f, #cc084c);
-            color: white;
-            border: none;
-            padding: 10px 20px;
-            border-radius: 25px;
-            font-size: 1rem;
-            cursor: pointer;
-            transition: background 0.3s ease;
-            text-align: center;
-            width: 100%;
-            text-decoration: none;
-        }
-
-        .program-card .donate-btn:hover {
-            background-color: #1e7e34;
-        }
-
-        .cta-section {
-            background: black;
-            color: white;
-            padding: 2rem;
-            text-align: center;
-        }
-
-        .cta-section h2 {
-            font-size: 2rem;
-            margin-bottom: 1rem;
-        }
-
-        .cta-section p {
-            font-size: 1.2rem;
-            margin-bottom: 1.5rem;
-        }
-
-        .cta-section button {
-            padding: 10px 20px;
-            background: #28a745;
-            color: white;
-            border: none;
-            border-radius: 25px;
-            font-size: 1rem;
-            cursor: pointer;
-            transition: background 0.3s ease;
-        }
-
-        .cta-section button:hover {
-            background: #1e7e34;
-        }
-
-        footer {
-            background: #f8f9fa;
-            text-align: center;
-            padding: 1rem;
-            font-size: 0.9rem;
-            color: #888;
-        }
-   
+/* Footer Styling */
+footer {
+    text-align: center;
+    padding: 1rem;
+    margin-top: 20px;
+    background-color: #2a2a2a;
+    color: white;
+}
